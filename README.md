@@ -1,16 +1,17 @@
-# flutter_ddd
+# Flutter DDD
 
-A new Flutter project.
+Fun project with a simple implementation of DDD, using MobX + Modular.
 
-## Getting Started
+This is not a final project, it was meant for testing and implementing good practices, DDD, Clean Arch, Design Patterns, etc.
 
-This project is a starting point for a Flutter application.
+# Automations
 
-A few resources to get you started if this is your first Flutter project:
+This project contains a Makefile to basic automation.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To configure the flutter version, on terminal: make fvm
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Architecture
+
+## Data
+## Domain
+## UI
