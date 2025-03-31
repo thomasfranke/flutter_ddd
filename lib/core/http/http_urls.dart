@@ -6,12 +6,7 @@ class HttpUrlMethod {
   HttpMethod httpMethod;
   dynamic body;
 
-  HttpUrlMethod({
-    required this.baseUrl,
-    this.path = '',
-    required this.httpMethod,
-    this.body,
-  });
+  HttpUrlMethod({required this.baseUrl, this.path = '', required this.httpMethod, this.body});
 
   String get url => "$baseUrl$path";
 

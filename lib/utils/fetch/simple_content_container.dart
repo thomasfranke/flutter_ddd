@@ -6,13 +6,7 @@ class SimpleContentContainer extends StatelessWidget {
   final Widget bottom;
   final bool expand;
 
-  const SimpleContentContainer({
-    super.key,
-    this.head = const SizedBox(),
-    this.bottom = const SizedBox(),
-    this.child = const SizedBox(),
-    this.expand = false,
-  });
+  const SimpleContentContainer({super.key, this.head = const SizedBox(), this.bottom = const SizedBox(), this.child = const SizedBox(), this.expand = false});
 
   factory SimpleContentContainer.listView({
     Widget head = const SizedBox(),
@@ -21,46 +15,23 @@ class SimpleContentContainer extends StatelessWidget {
     required Function itemBuilder,
     String emptyText = '',
     IconData emptyIcon = Icons.info,
-  }) =>
-      SimpleContentContainer(
-        head: head,
-        bottom: bottom,
-        expand: true,
-        child: itens.isEmpty
-            ? _buildEmpty(
-                emptyText: emptyText,
-                emptyIcon: emptyIcon,
-              )
-            : ListView.builder(
-                itemCount: itens.length,
-                itemBuilder: (_, idx) => itemBuilder(itens[idx]),
-              ),
-      );
+  }) => SimpleContentContainer(
+    head: head,
+    bottom: bottom,
+    expand: true,
+    child:
+        itens.isEmpty
+            ? _buildEmpty(emptyText: emptyText, emptyIcon: emptyIcon)
+            : ListView.builder(itemCount: itens.length, itemBuilder: (_, idx) => itemBuilder(itens[idx])),
+  );
 
-  static Widget _buildEmpty({
-    String emptyText = '',
-    IconData emptyIcon = Icons.info,
-  }) {
+  static Widget _buildEmpty({String emptyText = '', IconData emptyIcon = Icons.info}) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Icon(
-              emptyIcon,
-              size: 48,
-              color: Colors.black45,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              emptyText,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.black45),
-            ),
-          ),
+          Padding(padding: const EdgeInsets.only(bottom: 8.0), child: Icon(emptyIcon, size: 48, color: Colors.black45)),
+          Padding(padding: const EdgeInsets.all(8.0), child: Text(emptyText, textAlign: TextAlign.center, style: const TextStyle(color: Colors.black45))),
         ],
       ),
     );
@@ -68,13 +39,7 @@ class SimpleContentContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        _buildHead(),
-        _buildBody(),
-        _buildBottom(),
-      ],
-    );
+    return Column(children: <Widget>[_buildHead(), _buildBody(), _buildBottom()]);
   }
 
   Widget _buildHead() {

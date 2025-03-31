@@ -1,8 +1,20 @@
 # Flutter DDD  
 
-A fun project with a simple implementation of DDD using MobX and Modular.  
+A fun project with a simple implementation of DDD using MobX and Modular, leveraging the public Binance API to fetch currency prices.
 
-This is not a final project; it was created for testing and implementing best practices, DDD, Clean Architecture, Design Patterns, and more.  
+This project is under development and is meant to showcase good practices, DDD, Clean Architecture, Design Patterns, and more.
+
+Currently, only the basic request to fetch all prices is working.
+
+The following features will be added in the coming days:
+
+- Tests: E2E, integration and unit
+- Favorites
+- Search
+- Multi-language support
+- Dark Mode
+- Various improvements to the app architecture
+
 
 ---
 

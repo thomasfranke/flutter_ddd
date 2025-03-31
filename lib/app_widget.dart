@@ -6,12 +6,6 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter DDD',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routerConfig: Modular.routerConfig,
-    );
+    return MaterialApp.router(title: 'Flutter DDD', theme: ThemeData(primarySwatch: Colors.blue), routerConfig: Modular.routerConfig);
   }
 }

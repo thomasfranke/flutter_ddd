@@ -60,7 +60,8 @@ abstract class FetchStoreBase<T> with Store {
     }
 
     if (error is TypeError) {
-      this.errorMessage = 'Falha na exibição dos dados,'
+      this.errorMessage =
+          'Falha na exibição dos dados,'
           ' se o problema persitir,'
           ' contate o suporte técnico';
     } else {

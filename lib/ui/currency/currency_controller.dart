@@ -3,6 +3,4 @@ part 'currency_controller.g.dart';
 
 class CurrencyController = CurrencyControllerBase with _$CurrencyController;
 
-abstract class CurrencyControllerBase with Store {
-  
-}
+abstract class CurrencyControllerBase with Store {}

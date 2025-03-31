@@ -35,12 +35,7 @@ class FetchResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SimpleContentContainer(
-      head: head,
-      bottom: bottom,
-      expand: expand,
-      child: _bodyContent,
-    );
+    return SimpleContentContainer(head: head, bottom: bottom, expand: expand, child: _bodyContent);
   }
 
   Widget get _bodyContent {
@@ -51,19 +46,11 @@ class FetchResult extends StatelessWidget {
         }
 
         if (fetchStore.hasError) {
-          return _Error(
-            fetchStore: fetchStore,
-            errorChild: errorChild,
-          );
+          return _Error(fetchStore: fetchStore, errorChild: errorChild);
         }
 
         if (!fetchStore.isFetching && ((fetchStore.data is List && fetchStore.data.length == 0) || fetchStore.data == null)) {
-          return _Empty(
-            emptyIcon: emptyIcon,
-            emptyText: emptyText,
-            emptyChild: emptyChild,
-            showEmpty: showEmpty,
-          );
+          return _Empty(emptyIcon: emptyIcon, emptyText: emptyText, emptyChild: emptyChild, showEmpty: showEmpty);
         }
 
         return body;
@@ -82,14 +69,7 @@ class _Fetching extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const CircularProgressIndicator(),
-            SizedBox(height: 20),
-            Text(fetchingText),
-          ],
-        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[const CircularProgressIndicator(), SizedBox(height: 20), Text(fetchingText)]),
       ),
     );
   }
@@ -99,28 +79,14 @@ class _Error extends StatelessWidget {
   final FetchStore fetchStore;
   final Widget errorChild;
 
-  const _Error({
-    required this.fetchStore,
-    this.errorChild = const SizedBox(),
-  });
+  const _Error({required this.fetchStore, this.errorChild = const SizedBox()});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Icon(
-            Icons.error_outline,
-            size: 48,
-            color: Colors.black54,
-          ),
-          Text(
-            fetchStore.errorMessage,
-            textAlign: TextAlign.center,
-          ),
-          errorChild,
-        ],
+        children: <Widget>[const Icon(Icons.error_outline, size: 48, color: Colors.black54), Text(fetchStore.errorMessage, textAlign: TextAlign.center), errorChild],
       ),
     );
   }
@@ -132,12 +98,7 @@ class _Empty extends StatelessWidget {
   final Widget emptyChild;
   final bool showEmpty;
 
-  const _Empty({
-    this.emptyIcon = Icons.info,
-    this.emptyText = 'Sem resultados para exibição',
-    this.emptyChild = const SizedBox(),
-    this.showEmpty = true,
-  });
+  const _Empty({this.emptyIcon = Icons.info, this.emptyText = 'Sem resultados para exibição', this.emptyChild = const SizedBox(), this.showEmpty = true});
 
   @override
   Widget build(BuildContext context) {
@@ -149,22 +110,8 @@ class _Empty extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Icon(
-                  emptyIcon,
-                  size: 48,
-                  color: Colors.black45,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  emptyText,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.black45),
-                ),
-              ),
+              Padding(padding: const EdgeInsets.only(bottom: 8.0), child: Icon(emptyIcon, size: 48, color: Colors.black45)),
+              Padding(padding: const EdgeInsets.all(8.0), child: Text(emptyText, textAlign: TextAlign.center, style: const TextStyle(color: Colors.black45))),
               emptyChild,
             ],
           ),

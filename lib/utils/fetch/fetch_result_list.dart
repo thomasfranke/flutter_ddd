@@ -55,13 +55,14 @@ class FetchResultList<T> extends StatelessWidget {
       showLoader: showLoader,
       showEmpty: showEmpty,
       body: Observer(
-        builder: (_) => ListView.builder(
-          padding: EdgeInsets.only(bottom: this.marginBottom),
-          shrinkWrap: !scroll,
-          physics: !scroll ? const NeverScrollableScrollPhysics() : null,
-          itemCount: fetchStore.data == null ? 0 : fetchStore.data!.length,
-          itemBuilder: (_, index) => itemBuilder(fetchStore.data == null || index > fetchStore.data!.length ? [] : fetchStore.data![index]),
-        ),
+        builder:
+            (_) => ListView.builder(
+              padding: EdgeInsets.only(bottom: this.marginBottom),
+              shrinkWrap: !scroll,
+              physics: !scroll ? const NeverScrollableScrollPhysics() : null,
+              itemCount: fetchStore.data == null ? 0 : fetchStore.data!.length,
+              itemBuilder: (_, index) => itemBuilder(fetchStore.data == null || index > fetchStore.data!.length ? [] : fetchStore.data![index]),
+            ),
       ),
     );
   }

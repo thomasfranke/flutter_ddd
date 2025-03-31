@@ -47,13 +47,12 @@ class CurrencyModel {
     required this.closeTime,
     required this.firstId,
     required this.lastId,
-    required this.count,  
+    required this.count,
   });
 
-    static List<CurrencyModel> fromList(List<Map<String, dynamic>> list) {
+  static List<CurrencyModel> fromList(List<Map<String, dynamic>> list) {
     return list.map((l) => CurrencyModel.fromJson(l)).toList();
   }
 
   factory CurrencyModel.fromJson(Map<String, dynamic> map) => _$CurrencyModelFromJson(map);
-
 }
