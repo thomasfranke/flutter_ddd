@@ -1,7 +1,6 @@
-import 'package:flutter_ddd/domain/entities/currency_entity.dart';
-
+import 'package:flutter_ddd/data/models/currency_model.dart';
 class HomeData {
-  final List<Currency> currencies;
+  final List<CurrencyModel> currencies;
 
   HomeData({
     required this.currencies,
