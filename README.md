@@ -4,11 +4,16 @@ A fun project with a simple implementation of DDD using MobX and Modular, levera
 
 This project is under development and is meant to showcase good practices, DDD, Clean Architecture, Design Patterns, and more.
 
-Currently, only the basic request to fetch all prices is working.
+Currently, only the basic request to fetch all prices is working, however, we can already see the complete DDD pattern, with Data, Domain and UI layers.
+
+---
+
+### Under Development
 
 The following features will be added in the coming days:
 
 - Tests: E2E, integration and unit
+- Local Storage using Objective Box
 - Favorites
 - Search
 - Multi-language support
@@ -18,7 +23,13 @@ The following features will be added in the coming days:
 
 ---
 
-# Automations  
+### Timer
+
+[![wakatime](https://wakatime.com/badge/user/81ee337c-1e3d-460c-9004-b1ee1d921524/project/8e57dd84-45a1-4384-80f0-09216746f224.svg)](https://wakatime.com/badge/user/81ee337c-1e3d-460c-9004-b1ee1d921524/project/8e57dd84-45a1-4384-80f0-09216746f224)
+
+---
+
+### Automations  
 
 This project includes a Makefile for basic automation.  
 

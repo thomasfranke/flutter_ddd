@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
-import 'package:flutter_ddd/utils/fetch/simple_content_container.dart';
+import 'package:flutter_ddd/core/widgets/content_container.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class FetchResult extends StatelessWidget {
