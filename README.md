@@ -1,17 +1,16 @@
-# Flutter DDD
+# Flutter DDD  
 
-Fun project with a simple implementation of DDD, using MobX + Modular.
+A fun project with a simple implementation of DDD using MobX and Modular.  
 
-This is not a final project, it was meant for testing and implementing good practices, DDD, Clean Arch, Design Patterns, etc.
+This is not a final project; it was created for testing and implementing best practices, DDD, Clean Architecture, Design Patterns, and more.  
 
-# Automations
+---
 
-This project contains a Makefile to basic automation.
+# Automations  
 
-To configure the flutter version, on terminal: make fvm
+This project includes a Makefile for basic automation.  
 
-# Architecture
+To configure the Flutter version, run the following command in the terminal:  
 
-## Data
-## Domain
-## UI
+```sh
+make fvm
