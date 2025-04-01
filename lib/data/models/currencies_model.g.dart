@@ -11,3 +11,9 @@ CurrenciesModel _$CurrenciesModelFromJson(Map<String, dynamic> json) =>
       symbol: json['symbol'] as String,
       price: json['price'] as String,
     );
+
+Map<String, dynamic> _$CurrenciesModelToJson(CurrenciesModel instance) =>
+    <String, dynamic>{
+      'symbol': instance.symbol,
+      'price': instance.price,
+    };

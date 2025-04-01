@@ -8,6 +8,18 @@ Currently, only the basic request to fetch all prices is working, however, we ca
 
 ---
 
+### Why MobX + Modular?  
+
+This combination might not be as popular as Bloc, nor is it the newest stack for State Management.  
+
+However, it strikes a great balance between simplicity and the powerful tools that state management can offer.
+
+It sits between the verbosity of Bloc and the minimalism of ValueNotifier/ChangeNotifier.  
+
+Most importantly, it works. Really well. 🚀  
+
+---
+
 ### Under Development
 
 The following features will be added in the coming days:

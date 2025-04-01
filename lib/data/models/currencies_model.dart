@@ -2,12 +2,9 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'currencies_model.g.dart';
 
-@JsonSerializable(createToJson: false)
+@JsonSerializable(createToJson: true)
 class CurrenciesModel {
-  @JsonKey(name: 'symbol')
   final String symbol;
-
-  @JsonKey(name: 'price')
   final String price;
 
   CurrenciesModel({required this.symbol, required this.price});
@@ -17,4 +14,6 @@ class CurrenciesModel {
   }
 
   factory CurrenciesModel.fromJson(Map<String, dynamic> map) => _$CurrenciesModelFromJson(map);
+
+  Map<String, dynamic> toJson() => _$CurrenciesModelToJson(this);
 }
