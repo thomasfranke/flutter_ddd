@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HomeDataEntity {
-  CurrenciesModel get currencies;
+  List<CurrenciesModel> get currencies;
 
   /// Create a copy of HomeDataEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -32,13 +32,14 @@ mixin _$HomeDataEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HomeDataEntity &&
-            (identical(other.currencies, currencies) ||
-                other.currencies == currencies));
+            const DeepCollectionEquality()
+                .equals(other.currencies, currencies));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, currencies);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(currencies));
 
   @override
   String toString() {
@@ -52,7 +53,7 @@ abstract mixin class $HomeDataEntityCopyWith<$Res> {
           HomeDataEntity value, $Res Function(HomeDataEntity) _then) =
       _$HomeDataEntityCopyWithImpl;
   @useResult
-  $Res call({CurrenciesModel currencies});
+  $Res call({List<CurrenciesModel> currencies});
 }
 
 /// @nodoc
@@ -74,7 +75,7 @@ class _$HomeDataEntityCopyWithImpl<$Res>
       currencies: null == currencies
           ? _self.currencies
           : currencies // ignore: cast_nullable_to_non_nullable
-              as CurrenciesModel,
+              as List<CurrenciesModel>,
     ));
   }
 }
@@ -82,12 +83,19 @@ class _$HomeDataEntityCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _HomeDataEntity implements HomeDataEntity {
-  const _HomeDataEntity({required this.currencies});
+  const _HomeDataEntity({final List<CurrenciesModel> currencies = const []})
+      : _currencies = currencies;
   factory _HomeDataEntity.fromJson(Map<String, dynamic> json) =>
       _$HomeDataEntityFromJson(json);
 
+  final List<CurrenciesModel> _currencies;
   @override
-  final CurrenciesModel currencies;
+  @JsonKey()
+  List<CurrenciesModel> get currencies {
+    if (_currencies is EqualUnmodifiableListView) return _currencies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_currencies);
+  }
 
   /// Create a copy of HomeDataEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -109,13 +117,14 @@ class _HomeDataEntity implements HomeDataEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _HomeDataEntity &&
-            (identical(other.currencies, currencies) ||
-                other.currencies == currencies));
+            const DeepCollectionEquality()
+                .equals(other._currencies, _currencies));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, currencies);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_currencies));
 
   @override
   String toString() {
@@ -131,7 +140,7 @@ abstract mixin class _$HomeDataEntityCopyWith<$Res>
       __$HomeDataEntityCopyWithImpl;
   @override
   @useResult
-  $Res call({CurrenciesModel currencies});
+  $Res call({List<CurrenciesModel> currencies});
 }
 
 /// @nodoc
@@ -151,9 +160,9 @@ class __$HomeDataEntityCopyWithImpl<$Res>
   }) {
     return _then(_HomeDataEntity(
       currencies: null == currencies
-          ? _self.currencies
+          ? _self._currencies
           : currencies // ignore: cast_nullable_to_non_nullable
-              as CurrenciesModel,
+              as List<CurrenciesModel>,
     ));
   }
 }

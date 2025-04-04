@@ -3,7 +3,7 @@ import 'package:flutter_ddd/domain/usecases/home_usecase.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-part 'home_controller.g.dart';
+part 'home_viewmodel.g.dart';
 
 class HomeController = HomeControllerBase with _$HomeController;
 

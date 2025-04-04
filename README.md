@@ -31,6 +31,7 @@ The following features will be added in the coming days:
 - Multi-language support
 - Dark Mode
 - Various improvements to the app architecture
+- Documentation with Class, Sequence, and Use Case Diagrams.
 
 
 ---

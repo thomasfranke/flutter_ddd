@@ -1,4 +1,4 @@
-import 'package:flutter_ddd/ui/home/home_controller.dart';
+import 'package:flutter_ddd/ui/home/home_viewmodel.dart';
 import 'package:flutter_ddd/ui/home/home_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

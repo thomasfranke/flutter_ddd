@@ -4,7 +4,7 @@ import 'package:flutter_ddd/domain/services/currencies_service.dart';
 import 'package:flutter_ddd/domain/usecases/home_usecase.dart';
 import 'package:flutter_ddd/ui/currency/currency_controller.dart';
 import 'package:flutter_ddd/ui/currency/currency_module.dart';
-import 'package:flutter_ddd/ui/home/home_controller.dart';
+import 'package:flutter_ddd/ui/home/home_viewmodel.dart';
 import 'package:flutter_ddd/ui/home/home_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

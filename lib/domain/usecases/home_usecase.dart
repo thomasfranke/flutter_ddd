@@ -7,10 +7,11 @@ class HomeUseCase {
   CurrenciesService currenciesService = Modular.get<CurrenciesService>();
 
   Future<HomeDataEntity> loadHomeDataUseCase() async {
-    // HomeDataEntity homeDataEntity = HomeDataEntity();
+    HomeDataEntity homeDataEntity = HomeDataEntity();
     List<CurrenciesModel> currrencies = await currenciesService.getCurrencies();
 
-    currrencies.currencies = currrencies;
+    
+    homeDataEntity = homeDataEntity.copyWith(currencies: currrencies);
     return homeDataEntity;
   }
 }

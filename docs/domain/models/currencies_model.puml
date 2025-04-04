@@ -1,0 +1,9 @@
+@startuml CorrenciesModel
+class CurrenciesModel {
+  + String symbol
+  + String price
+  + static List<CurrenciesModel> fromList(List<Map<String, dynamic>> list)
+  + factory fromJson(Map<String, dynamic> map)
+  + Map<String, dynamic> toJson()
+}
+@enduml

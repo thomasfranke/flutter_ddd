@@ -8,8 +8,10 @@ part of 'home_data_entity.dart';
 
 _HomeDataEntity _$HomeDataEntityFromJson(Map<String, dynamic> json) =>
     _HomeDataEntity(
-      currencies:
-          CurrenciesModel.fromJson(json['currencies'] as Map<String, dynamic>),
+      currencies: (json['currencies'] as List<dynamic>?)
+              ?.map((e) => CurrenciesModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$HomeDataEntityToJson(_HomeDataEntity instance) =>
