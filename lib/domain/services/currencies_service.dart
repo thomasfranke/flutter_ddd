@@ -1,9 +1,9 @@
 import 'package:flutter_ddd/data/models/currencies_model.dart';
-import 'package:flutter_ddd/data/repositories/currency_repository.dart';
+import 'package:flutter_ddd/domain/repositories/curency_repository.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CurrenciesService {
-  CurrencyRepository currencyRepository = Modular.get<CurrencyRepository>();
+  ICurrencyRepository currencyRepository = Modular.get<ICurrencyRepository>();
 
   Future<void> getCurrency() async {
     return;

@@ -3,11 +3,11 @@ import 'package:flutter_ddd/domain/usecases/home_usecase.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-part 'home_viewmodel.g.dart';
+part 'home_store.g.dart';
 
-class HomeController = HomeControllerBase with _$HomeController;
+class HomeStore = HomeStoreBase with _$HomeStore;
 
-abstract class HomeControllerBase with Store {
+abstract class HomeStoreBase with Store {
   HomeUseCase homeUseCase = Modular.get<HomeUseCase>();
 
   @observable

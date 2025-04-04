@@ -1,5 +1,5 @@
-import 'package:flutter_ddd/ui/currency/currency_controller.dart';
-import 'package:flutter_ddd/ui/currency/currency_screen.dart';
+import 'package:flutter_ddd/presentation/currency/currency_store.dart';
+import 'package:flutter_ddd/presentation/currency/currency_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CurrencyModule extends Module {
@@ -7,7 +7,7 @@ class CurrencyModule extends Module {
 
   @override
   void binds(i) {
-    i.addSingleton(CurrencyController.new);
+    i.addSingleton(CurrencyStore.new);
   }
 
   @override
