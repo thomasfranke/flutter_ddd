@@ -9,26 +9,26 @@ part of 'home_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$HomeStore on HomeStoreBase, Store {
-  late final _$homeDataAtom =
-      Atom(name: 'HomeStoreBase.homeData', context: context);
+  late final _$currencySummaryListAtom =
+      Atom(name: 'HomeStoreBase.currencySummaryList', context: context);
 
   @override
-  FetchStore<HomeDataEntity> get homeData {
-    _$homeDataAtom.reportRead();
-    return super.homeData;
+  FetchStore<List<CurrencySummaryEntity>> get currencySummaryList {
+    _$currencySummaryListAtom.reportRead();
+    return super.currencySummaryList;
   }
 
   @override
-  set homeData(FetchStore<HomeDataEntity> value) {
-    _$homeDataAtom.reportWrite(value, super.homeData, () {
-      super.homeData = value;
+  set currencySummaryList(FetchStore<List<CurrencySummaryEntity>> value) {
+    _$currencySummaryListAtom.reportWrite(value, super.currencySummaryList, () {
+      super.currencySummaryList = value;
     });
   }
 
   @override
   String toString() {
     return '''
-homeData: ${homeData}
+currencySummaryList: ${currencySummaryList}
     ''';
   }
 }

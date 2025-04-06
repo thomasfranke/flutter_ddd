@@ -1,19 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'currencies_model.dart';
+part of 'currency_summary_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CurrenciesModel _$CurrenciesModelFromJson(Map<String, dynamic> json) =>
-    CurrenciesModel(
+CurrencySummaryEntity _$CurrencySummaryEntityFromJson(
+        Map<String, dynamic> json) =>
+    CurrencySummaryEntity(
       symbol: json['symbol'] as String,
       price: json['price'] as String,
     );
-
-Map<String, dynamic> _$CurrenciesModelToJson(CurrenciesModel instance) =>
-    <String, dynamic>{
-      'symbol': instance.symbol,
-      'price': instance.price,
-    };

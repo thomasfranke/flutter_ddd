@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'currency_store.dart';
+part of 'currency_detail_store.dart';
 
 // **************************************************************************
 // StoreGenerator

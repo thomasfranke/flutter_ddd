@@ -2,9 +2,9 @@ import 'package:flutter_ddd/core/http/http_client.dart';
 import 'package:flutter_ddd/data/repositories/currency_repository_impl.dart';
 import 'package:flutter_ddd/domain/repositories/curency_repository.dart';
 import 'package:flutter_ddd/domain/services/currencies_service.dart';
-import 'package:flutter_ddd/domain/usecases/home_usecase.dart';
-import 'package:flutter_ddd/presentation/currency/currency_store.dart';
-import 'package:flutter_ddd/presentation/currency/currency_module.dart';
+import 'package:flutter_ddd/domain/usecases/currency_usecases.dart';
+import 'package:flutter_ddd/presentation/currency_detail/currency_detail_store.dart';
+import 'package:flutter_ddd/presentation/currency_detail/currency_detail_module.dart';
 import 'package:flutter_ddd/presentation/home/home_store.dart';
 import 'package:flutter_ddd/presentation/home/home_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -20,7 +20,7 @@ class AppModule extends Module {
 
     /// Domain
     /// Use Cases
-    i.addSingleton(HomeUseCase.new);
+    i.addSingleton(CurrencyUseCases.new);
     /// Services
     i.addSingleton(CurrenciesService.new);
     /// Repositories

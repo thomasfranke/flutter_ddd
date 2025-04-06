@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-part 'currency_store.g.dart';
+part 'currency_detail_store.g.dart';
 
 class CurrencyStore = CurrencyStoreBase with _$CurrencyStore;
 

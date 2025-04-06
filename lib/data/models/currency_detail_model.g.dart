@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'currency_model.dart';
+part of 'currency_detail_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CurrencyModel _$CurrencyModelFromJson(Map<String, dynamic> json) =>
-    CurrencyModel(
+CurrencyDetailModel _$CurrencyDetailModelFromJson(Map<String, dynamic> json) =>
+    CurrencyDetailModel(
       symbol: json['symbol'] as String,
       priceChange: (json['priceChange'] as num).toDouble(),
       priceChangePercent: (json['priceChangePercent'] as num).toDouble(),

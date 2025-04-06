@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/presentation/home/components/currency_summary_widget.dart';
+import 'package:flutter_ddd/presentation/home/components/search_widget.dart';
 import 'package:flutter_ddd/presentation/home/home_store.dart';
+import 'package:flutter_ddd/utils/fetch/fetch_result_list.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -15,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    homeStore.getHomeData();
+    homeStore.getCurrencies();
     super.initState();
   }
 
@@ -26,14 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Observer(
-            builder: (_) {
-              return Column(
-                children:
-                    homeStore.homeData.data!.currencies.map((currency) {
-                      return Padding(padding: const EdgeInsets.all(8.0), child: Text("${currency.symbol} | ${currency.price}"));
-                    }).toList(),
-              );
-            },
+            builder:
+                (_) => FetchResultList(
+                  expand: false,
+                  scroll: false,
+                  head: SearchWidget(),
+                  fetchStore: homeStore.currencySummaryList,
+                  itemBuilder: (CurrencySummaryEntity currency) => CurrencySummaryWidget(currency: currency),
+                ),
           ),
         ),
       ),

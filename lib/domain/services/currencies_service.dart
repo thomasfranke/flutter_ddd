@@ -1,4 +1,5 @@
-import 'package:flutter_ddd/data/models/currencies_model.dart';
+import 'package:flutter_ddd/core/mappers/currency_summary_mapper.dart';
+import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
 import 'package:flutter_ddd/domain/repositories/curency_repository.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -9,7 +10,8 @@ class CurrenciesService {
     return;
   }
 
-  Future<List<CurrenciesModel>> getCurrencies() async {
-    return currencyRepository.fetchCurrencies();
+  Future<List<CurrencySummaryEntity>> getCurrencies() async {
+    final models = await currencyRepository.fetchCurrencies();
+    return models.map((model) => model.toEntity()).toList();
   }
 }

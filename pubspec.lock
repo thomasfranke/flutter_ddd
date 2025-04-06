@@ -178,10 +178,10 @@ packages:
     dependency: transitive
     description:
       name: dart_style
-      sha256: "7306ab8a2359a48d22310ad823521d723acfed60ee1f7e37388e8986853b6820"
+      sha256: "27eb0ae77836989a3bc541ce55595e8ceee0992807f14511552a898ddd0d88ac"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.8"
+    version: "3.0.1"
   dio:
     dependency: "direct main"
     description:
@@ -243,6 +243,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bounceable:
+    dependency: "direct main"
+    description:
+      name: flutter_bounceable
+      sha256: "2e46ad87e5870188a459d1e88f5acbf7bf0217651a6655f9ff079bc0c5976010"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -255,10 +263,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_localization
-      sha256: "424abdffbb54d11149d2df7d6933f03ca5736e4fdafa44271cd2aeb5678cf6b4"
+      sha256: "987faf0a6c13a267202b28d3ed680647e234245ead1a1c1f95f87e86c6f12490"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.1"
+    version: "0.3.2"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -290,14 +298,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      sha256: d3a89184101baec7f4600d58840a764d2ef760fe1c5a20ef9e6b0e9b24a07a3a
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.8.0"
   freezed:
     dependency: "direct dev"
     description:
       name: freezed
-      sha256: "7ed2ddaa47524976d5f2aa91432a79da36a76969edd84170777ac5bea82d797c"
+      sha256: "6022db4c7bfa626841b2a10f34dd1e1b68e8f8f9650db6112dcdeeca45ca793c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.6"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -390,10 +406,10 @@ packages:
     dependency: "direct main"
     description:
       name: json_serializable
-      sha256: c2fcb3920cf2b6ae6845954186420fca40bc0a8abcc84903b7801f17d7050d7c
+      sha256: "81f04dee10969f89f604e1249382d46b97a1ccad53872875369622b5bfc9e58a"
       url: "https://pub.dev"
     source: hosted
-    version: "6.9.0"
+    version: "6.9.4"
   leak_tracker:
     dependency: transitive
     description:
@@ -723,10 +739,10 @@ packages:
     dependency: "direct overridden"
     description:
       name: source_gen
-      sha256: "14658ba5f669685cd3d63701d01b31ea748310f7ab854e471962670abcf57832"
+      sha256: "35c8150ece9e8c8d263337a265153c3329667640850b9304861faea59fc98f6b"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.0"
+    version: "2.0.0"
   source_helper:
     dependency: transitive
     description:

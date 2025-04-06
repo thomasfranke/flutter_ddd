@@ -1,5 +1,5 @@
-import 'package:flutter_ddd/domain/entities/home_data_entity.dart';
-import 'package:flutter_ddd/domain/usecases/home_usecase.dart';
+import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/domain/usecases/currency_usecases.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
@@ -8,12 +8,10 @@ part 'home_store.g.dart';
 class HomeStore = HomeStoreBase with _$HomeStore;
 
 abstract class HomeStoreBase with Store {
-  HomeUseCase homeUseCase = Modular.get<HomeUseCase>();
+  CurrencyUseCases currencyUseCases = Modular.get<CurrencyUseCases>();
 
   @observable
-  FetchStore<HomeDataEntity> homeData = FetchStore(HomeDataEntity());
+  FetchStore<List<CurrencySummaryEntity>> currencySummaryList = FetchStore([]);
 
-  getHomeData() {
-    homeData.fetch(homeUseCase.loadHomeDataUseCase());
-  }
+  getCurrencies({String filter = ""}) async => await currencySummaryList.fetch(currencyUseCases.loadCurrenciesUseCase(filter: filter));
 }

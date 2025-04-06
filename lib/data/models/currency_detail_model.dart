@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'currency_model.g.dart';
+part 'currency_detail_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class CurrencyModel {
+class CurrencyDetailModel {
   final String symbol;
   final double priceChange;
   final double priceChangePercent;
@@ -26,7 +26,7 @@ class CurrencyModel {
   final double lastId;
   final double count;
 
-  CurrencyModel({
+  CurrencyDetailModel({
     required this.symbol,
     required this.priceChange,
     required this.priceChangePercent,
@@ -50,9 +50,9 @@ class CurrencyModel {
     required this.count,
   });
 
-  static List<CurrencyModel> fromList(List<Map<String, dynamic>> list) {
-    return list.map((l) => CurrencyModel.fromJson(l)).toList();
+  static List<CurrencyDetailModel> fromList(List<Map<String, dynamic>> list) {
+    return list.map((l) => CurrencyDetailModel.fromJson(l)).toList();
   }
 
-  factory CurrencyModel.fromJson(Map<String, dynamic> map) => _$CurrencyModelFromJson(map);
+  factory CurrencyDetailModel.fromJson(Map<String, dynamic> map) => _$CurrencyDetailModelFromJson(map);
 }
