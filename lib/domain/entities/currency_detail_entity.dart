@@ -5,49 +5,49 @@ part 'currency_detail_entity.g.dart';
 @JsonSerializable(createToJson: false)
 class CurrencyDetailEntity {
   final String symbol;
-  // final double priceChange;
-  // final double priceChangePercent;
-  // final double weightedAvgPrice;
-  // final double prevClosePrice;
-  // final double lastPrice;
-  // final double lastQty;
-  // final double bidPrice;
-  // final double bidQty;
-  // final double askPrice;
-  // final double askQty;
-  // final double openPrice;
-  // final double highPrice;
-  // final double lowPrice;
-  // final double volume;
-  // final double quoteVolume;
-  // final double openTime;
-  // final double closeTime;
-  // final double firstId;
-  // final double lastId;
-  // final double count;
+  final String priceChange;
+  final String priceChangePercent;
+  final String weightedAvgPrice;
+  final String prevClosePrice;
+  final String lastPrice;
+  final String lastQty;
+  final String bidPrice;
+  final String bidQty;
+  final String askPrice;
+  final String askQty;
+  final String openPrice;
+  final String highPrice;
+  final String lowPrice;
+  final String volume;
+  final String quoteVolume;
+  final String openTime;
+  final String closeTime;
+  final String firstId;
+  final String lastId;
+  final String count;
 
   CurrencyDetailEntity({
-    required this.symbol,
-    // required this.priceChange,
-    // required this.priceChangePercent,
-    // required this.weightedAvgPrice,
-    // required this.prevClosePrice,
-    // required this.lastPrice,
-    // required this.lastQty,
-    // required this.bidPrice,
-    // required this.bidQty,
-    // required this.askPrice,
-    // required this.askQty,
-    // required this.openPrice,
-    // required this.highPrice,
-    // required this.lowPrice,
-    // required this.volume,
-    // required this.quoteVolume,
-    // required this.openTime,
-    // required this.closeTime,
-    // required this.firstId,
-    // required this.lastId,
-    // required this.count,
+    this.symbol = "",
+    this.priceChange = "",
+    this.priceChangePercent = "",
+    this.weightedAvgPrice = "",
+    this.prevClosePrice = "",
+    this.lastPrice = "",
+    this.lastQty = "",
+    this.bidPrice = "",
+    this.bidQty = "",
+    this.askPrice = "",
+    this.askQty = "",
+    this.openPrice = "",
+    this.highPrice = "",
+    this.lowPrice = "",
+    this.volume = "",
+    this.quoteVolume = "",
+    this.openTime = "",
+    this.closeTime = "",
+    this.firstId = "",
+    this.lastId = "",
+    this.count = "",
   });
 
   static List<CurrencyDetailEntity> fromList(List<Map<String, dynamic>> list) {

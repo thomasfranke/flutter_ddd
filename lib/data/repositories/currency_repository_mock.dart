@@ -10,6 +10,28 @@ class CurrencyRepositoryMock implements ICurrencyRepository {
 
   @override
   Future<CurrencyDetailModel> fetchCurrency({required String currencySymbol}) async {
-    return CurrencyDetailModel(symbol: "BTC");
+    return CurrencyDetailModel(
+      symbol: "BTC",
+      priceChange: "-1",
+      askPrice: "1",
+      askQty: "1",
+      bidPrice: "1",
+      bidQty: "1",
+      closeTime: "1",
+      count: "1",
+      firstId: "1",
+      highPrice: "1",
+      lastId: "1",
+      lastPrice: "1",
+      lastQty: "1",
+      lowPrice: "1",
+      openPrice: "1",
+      openTime: "1",
+      prevClosePrice: "1",
+      priceChangePercent: "1",
+      quoteVolume: "1",
+      volume: "1",
+      weightedAvgPrice: "1",
+    );
   }
 }

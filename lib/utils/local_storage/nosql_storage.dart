@@ -47,8 +47,6 @@ class ObjectBoxStorage<T> implements IStorageService<T> {
 
   @override
   Future<bool> inArray(String key, T value) async {
-    // Aqui você pode implementar uma lógica para verificar se o item já existe
-    // Por exemplo, verificando se um item com o mesmo ID já está presente.
     final allItems = await getAll();
     return allItems.contains(value);
   }

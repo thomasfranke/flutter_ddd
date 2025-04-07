@@ -1,3 +1,4 @@
+import 'package:flutter_ddd/core/converters/string_converter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'currency_detail_model.g.dart';
@@ -5,49 +6,89 @@ part 'currency_detail_model.g.dart';
 @JsonSerializable(createToJson: false)
 class CurrencyDetailModel {
   final String symbol;
-  // final double priceChange;
-  // final String priceChangePercent;
-  // final String weightedAvgPrice;
-  // final String prevClosePrice;
-  // final String lastPrice;
-  // final String lastQty;
-  // final String bidPrice;
-  // final String bidQty;
-  // final String askPrice;
-  // final String askQty;
-  // final String openPrice;
-  // final String highPrice;
-  // final String lowPrice;
-  // final String volume;
-  // final String quoteVolume;
-  // final String openTime;
-  // final String closeTime;
-  // final String firstId;
-  // final String lastId;
-  // final String count;
+
+  @StringConverter()
+  final String priceChange;
+
+  @StringConverter()
+  final String priceChangePercent;
+
+  @StringConverter()
+  final String weightedAvgPrice;
+
+  @StringConverter()
+  final String prevClosePrice;
+
+  @StringConverter()
+  final String lastPrice;
+
+  @StringConverter()
+  final String lastQty;
+
+  @StringConverter()
+  final String bidPrice;
+
+  @StringConverter()
+  final String bidQty;
+
+  @StringConverter()
+  final String askPrice;
+
+  @StringConverter()
+  final String askQty;
+
+  @StringConverter()
+  final String openPrice;
+
+  @StringConverter()
+  final String highPrice;
+
+  @StringConverter()
+  final String lowPrice;
+
+  @StringConverter()
+  final String volume;
+
+  @StringConverter()
+  final String quoteVolume;
+
+  @StringConverter()
+  final String openTime;
+
+  @StringConverter()
+  final String closeTime;
+
+  @StringConverter()
+  final String firstId;
+
+  @StringConverter()
+  final String lastId;
+
+  @StringConverter()
+  final String count;
 
   CurrencyDetailModel({
     required this.symbol,
-    // required this.priceChange,
-    // required this.priceChangePercent,
-    // required this.weightedAvgPrice,
-    // required this.prevClosePrice,
-    // required this.lastPrice,
-    // required this.lastQty,
-    // required this.bidPrice,
-    // required this.bidQty,
-    // required this.askPrice,
-    // required this.askQty,
-    // required this.openPrice,
-    // required this.highPrice,
-    // required this.lowPrice,
-    // required this.volume,
-    // required this.quoteVolume,
-    // required this.openTime,
-    // required this.closeTime,
-    // required this.firstId,
-    // required this.lastId,
-    // required this.count,
+    required this.priceChange,
+    required this.priceChangePercent,
+    required this.weightedAvgPrice,
+    required this.prevClosePrice,
+    required this.lastPrice,
+    required this.lastQty,
+    required this.bidPrice,
+    required this.bidQty,
+    required this.askPrice,
+    required this.askQty,
+    required this.openPrice,
+    required this.highPrice,
+    required this.lowPrice,
+    required this.volume,
+    required this.quoteVolume,
+    required this.openTime,
+    required this.closeTime,
+    required this.firstId,
+    required this.lastId,
+    required this.count,
   });
 
   static List<CurrencyDetailModel> fromList(List<Map<String, dynamic>> list) => list.map((l) => CurrencyDetailModel.fromJson(l)).toList();
