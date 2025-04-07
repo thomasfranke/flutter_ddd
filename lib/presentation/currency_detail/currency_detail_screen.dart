@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ddd/presentation/currency_detail/currency_detail_store.dart';
+import 'package:flutter_ddd/utils/fetch/fetch_result.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CurrencyScreen extends StatefulWidget {
   final String currencySymbol;
@@ -9,8 +12,16 @@ class CurrencyScreen extends StatefulWidget {
 }
 
 class _CurrencyScreenState extends State<CurrencyScreen> {
+  CurrencyStore currencyStore = Modular.get<CurrencyStore>();
+
+  @override
+  void initState() {
+    currencyStore.getCurrency(currencySymbol: widget.currencySymbol);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(widget.currencySymbol)), body: Center(child: Text("Coming soon...")));
+    return Scaffold(appBar: AppBar(title: Text(widget.currencySymbol)), body: FetchResult(fetchStore: currencyStore.currencyDetail, body: Text('ae')));
   }
 }

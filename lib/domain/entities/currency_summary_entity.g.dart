@@ -7,8 +7,8 @@ part of 'currency_summary_entity.dart';
 // **************************************************************************
 
 CurrencySummaryEntity _$CurrencySummaryEntityFromJson(
-        Map<String, dynamic> json) =>
-    CurrencySummaryEntity(
-      symbol: json['symbol'] as String,
-      price: json['price'] as String,
-    );
+  Map<String, dynamic> json,
+) => CurrencySummaryEntity(
+  symbol: json['symbol'] as String,
+  price: json['price'] as String,
+);

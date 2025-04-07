@@ -7,26 +7,4 @@ part of 'currency_detail_model.dart';
 // **************************************************************************
 
 CurrencyDetailModel _$CurrencyDetailModelFromJson(Map<String, dynamic> json) =>
-    CurrencyDetailModel(
-      symbol: json['symbol'] as String,
-      priceChange: (json['priceChange'] as num).toDouble(),
-      priceChangePercent: (json['priceChangePercent'] as num).toDouble(),
-      weightedAvgPrice: (json['weightedAvgPrice'] as num).toDouble(),
-      prevClosePrice: (json['prevClosePrice'] as num).toDouble(),
-      lastPrice: (json['lastPrice'] as num).toDouble(),
-      lastQty: (json['lastQty'] as num).toDouble(),
-      bidPrice: (json['bidPrice'] as num).toDouble(),
-      bidQty: (json['bidQty'] as num).toDouble(),
-      askPrice: (json['askPrice'] as num).toDouble(),
-      askQty: (json['askQty'] as num).toDouble(),
-      openPrice: (json['openPrice'] as num).toDouble(),
-      highPrice: (json['highPrice'] as num).toDouble(),
-      lowPrice: (json['lowPrice'] as num).toDouble(),
-      volume: (json['volume'] as num).toDouble(),
-      quoteVolume: (json['quoteVolume'] as num).toDouble(),
-      openTime: (json['openTime'] as num).toDouble(),
-      closeTime: (json['closeTime'] as num).toDouble(),
-      firstId: (json['firstId'] as num).toDouble(),
-      lastId: (json['lastId'] as num).toDouble(),
-      count: (json['count'] as num).toDouble(),
-    );
+    CurrencyDetailModel(symbol: json['symbol'] as String);

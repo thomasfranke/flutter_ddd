@@ -3,5 +3,5 @@ import 'package:flutter_ddd/data/models/currency_detail_model.dart';
 
 abstract class ICurrencyRepository {
   Future<List<CurrencySummaryModel>> fetchCurrencies();
-  Future<CurrencyDetailModel> fetchCurrency();
+  Future<CurrencyDetailModel> fetchCurrency({required String currencySymbol});
 }

@@ -13,5 +13,7 @@ abstract class HomeStoreBase with Store {
   @observable
   FetchStore<List<CurrencySummaryEntity>> currencySummaryList = FetchStore([]);
 
-  getCurrencies({String filter = ""}) async => await currencySummaryList.fetch(currencyUseCases.loadCurrenciesUseCase(filter: filter));
+  getCurrencies({String filter = ""}) async {
+    return await currencySummaryList.fetch(currencyUseCases.loadCurrencies(filter: filter));
+  }
 }
