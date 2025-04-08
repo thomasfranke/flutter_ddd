@@ -1,10 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_ddd/app/domain/entities/quote_summary_entity.dart';
-import 'package:flutter_ddd/app/presentation/home/widgets/quote_summary_widget.dart';
-import 'package:flutter_ddd/app/presentation/home/widgets/search_widget.dart';
+import 'package:flutter_ddd/app/presentation/home/tabs/favorites_tab.dart';
+import 'package:flutter_ddd/app/presentation/home/tabs/quotes_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/home_controller.dart';
-import 'package:flutter_ddd/utils/fetch/fetch_result_list.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,15 +15,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeController homeController = Modular.get<HomeController>();
+  int currentIndex = 0;
 
   @override
   void initState() {
-    homeController.getCurrencies();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> pages = [QuotesTab(), FavoritesTab()];
+
     return Scaffold(
       appBar: AppBar(title: Text('Flutter Coins')),
       drawer: Drawer(
@@ -39,13 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Observer(
-        builder:
-            (_) => FetchResultList(
-              head: SearchWidget(),
-              fetchStore: homeController.quoteSummaryList,
-              itemBuilder: (QuoteSummaryEntity quote) => QuoteSummaryWidget(quote: quote),
-            ),
+      body: IndexedStack(index: currentIndex, children: pages),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Quotes'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Favotires'),
+        ],
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+            log('index = $index');
+          });
+        },
       ),
     );
   }

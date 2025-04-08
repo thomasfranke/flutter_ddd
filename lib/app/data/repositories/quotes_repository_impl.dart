@@ -2,11 +2,11 @@ import 'package:flutter_ddd/core/http/http_client.dart';
 import 'package:flutter_ddd/core/http/http_routes.dart';
 import 'package:flutter_ddd/app/data/models/quote_summary_model.dart';
 import 'package:flutter_ddd/app/data/models/quote_detail_model.dart';
-import 'package:flutter_ddd/app/domain/repositories/quote_repository.dart';
+import 'package:flutter_ddd/app/domain/repositories/quotes_repository.dart';
 import 'package:flutter_ddd/utils/result/result.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class QuoteRepositoryImpl implements IQuoteRepository {
+class QuotesRepositoryImpl implements IQuotesRepository {
   final HttpClient _api = Modular.get();
 
   @override

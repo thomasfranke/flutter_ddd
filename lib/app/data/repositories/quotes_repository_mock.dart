@@ -1,8 +1,8 @@
 import 'package:flutter_ddd/app/data/models/quote_summary_model.dart';
 import 'package:flutter_ddd/app/data/models/quote_detail_model.dart';
-import 'package:flutter_ddd/app/domain/repositories/quote_repository.dart';
+import 'package:flutter_ddd/app/domain/repositories/quotes_repository.dart';
 
-class QuoteRepositoryMock implements IQuoteRepository {
+class QuotesRepositoryMock implements IQuotesRepository {
   @override
   Future<List<QuoteSummaryModel>> fetchQuotes() async {
     return [QuoteSummaryModel(symbol: "BTC", price: "10000"), QuoteSummaryModel(symbol: "ETH", price: "2000")];
