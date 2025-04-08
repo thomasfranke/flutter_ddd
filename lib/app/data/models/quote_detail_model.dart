@@ -1,10 +1,10 @@
 import 'package:flutter_ddd/shared/converters/string_converter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'currency_detail_model.g.dart';
+part 'quote_detail_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class CurrencyDetailModel {
+class QuoteDetailModel {
   final String symbol;
 
   @StringConverter()
@@ -67,7 +67,7 @@ class CurrencyDetailModel {
   @StringConverter()
   final String count;
 
-  CurrencyDetailModel({
+  QuoteDetailModel({
     required this.symbol,
     required this.priceChange,
     required this.priceChangePercent,
@@ -91,7 +91,7 @@ class CurrencyDetailModel {
     required this.count,
   });
 
-  static List<CurrencyDetailModel> fromList(List<Map<String, dynamic>> list) => list.map((l) => CurrencyDetailModel.fromJson(l)).toList();
+  static List<QuoteDetailModel> fromList(List<Map<String, dynamic>> list) => list.map((l) => QuoteDetailModel.fromJson(l)).toList();
 
-  factory CurrencyDetailModel.fromJson(Map<String, dynamic> map) => _$CurrencyDetailModelFromJson(map);
+  factory QuoteDetailModel.fromJson(Map<String, dynamic> map) => _$QuoteDetailModelFromJson(map);
 }

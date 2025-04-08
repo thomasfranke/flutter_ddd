@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'currency_detail_entity.g.dart';
+part 'quote_detail_entity.g.dart';
 
 @JsonSerializable(createToJson: false)
-class CurrencyDetailEntity {
+class QuoteDetailEntity {
   final String symbol;
   final String priceChange;
   final String priceChangePercent;
@@ -26,7 +26,7 @@ class CurrencyDetailEntity {
   final String lastId;
   final String count;
 
-  CurrencyDetailEntity({
+  QuoteDetailEntity({
     this.symbol = "",
     this.priceChange = "",
     this.priceChangePercent = "",
@@ -50,9 +50,9 @@ class CurrencyDetailEntity {
     this.count = "",
   });
 
-  static List<CurrencyDetailEntity> fromList(List<Map<String, dynamic>> list) {
-    return list.map((l) => CurrencyDetailEntity.fromJson(l)).toList();
+  static List<QuoteDetailEntity> fromList(List<Map<String, dynamic>> list) {
+    return list.map((l) => QuoteDetailEntity.fromJson(l)).toList();
   }
 
-  factory CurrencyDetailEntity.fromJson(Map<String, dynamic> map) => _$CurrencyDetailEntityFromJson(map);
+  factory QuoteDetailEntity.fromJson(Map<String, dynamic> map) => _$QuoteDetailEntityFromJson(map);
 }

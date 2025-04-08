@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_ddd/core/http/http_urls.dart';
-import 'package:result_dart/result_dart.dart';
+import 'package:flutter_ddd/utils/result/result.dart';
 
 class HttpClient {
   final Dio _http = Dio();
@@ -13,12 +13,22 @@ class HttpClient {
     Options requestOptions = Options(method: api.httpMethod.name);
 
     try {
-      final response = await _http.request(api.url, data: data, queryParameters: query, options: requestOptions);
-      return Success(response.data); // retorno de sucesso
+      Response response = await _http.request(api.url, data: data, options: requestOptions, queryParameters: query);
+      return Result.ok(response.data);
     } on DioException catch (error) {
-      return Failure(error); // erro tratado pelo Dio
+      return Result.error(error);
     } catch (error) {
-      return Failure(Exception(error.toString())); // erro genérico
+      return Result.error(Exception(error));
     }
+
+    /// result_dart
+    // try {
+    //   final response = await _http.request(api.url, data: data, queryParameters: query, options: requestOptions);
+    //   return Success(response.data);
+    // } on DioException catch (error) {
+    //   return Failure(error);
+    // } catch (error) {
+    //   return Failure(Exception(error.toString()));
+    // }
   }
 }

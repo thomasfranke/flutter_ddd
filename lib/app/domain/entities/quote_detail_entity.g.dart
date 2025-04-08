@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'currency_detail_entity.dart';
+part of 'quote_detail_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CurrencyDetailEntity _$CurrencyDetailEntityFromJson(
-        Map<String, dynamic> json) =>
-    CurrencyDetailEntity(
+QuoteDetailEntity _$QuoteDetailEntityFromJson(Map<String, dynamic> json) =>
+    QuoteDetailEntity(
       symbol: json['symbol'] as String? ?? "",
       priceChange: json['priceChange'] as String? ?? "",
       priceChangePercent: json['priceChangePercent'] as String? ?? "",

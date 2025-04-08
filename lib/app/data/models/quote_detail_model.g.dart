@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'currency_detail_model.dart';
+part of 'quote_detail_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CurrencyDetailModel _$CurrencyDetailModelFromJson(Map<String, dynamic> json) =>
-    CurrencyDetailModel(
+QuoteDetailModel _$QuoteDetailModelFromJson(Map<String, dynamic> json) =>
+    QuoteDetailModel(
       symbol: json['symbol'] as String,
       priceChange: const StringConverter().fromJson(json['priceChange']),
       priceChangePercent:
