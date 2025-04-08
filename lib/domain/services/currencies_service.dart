@@ -1,5 +1,5 @@
-import 'package:flutter_ddd/core/mappers/currency_detail_mapper.dart';
-import 'package:flutter_ddd/core/mappers/currency_summary_mapper.dart';
+import 'package:flutter_ddd/shared/mappers/currency_detail_mapper.dart';
+import 'package:flutter_ddd/shared/mappers/currency_summary_mapper.dart';
 import 'package:flutter_ddd/domain/entities/currency_detail_entity.dart';
 import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
 import 'package:flutter_ddd/domain/repositories/currency_repository.dart';

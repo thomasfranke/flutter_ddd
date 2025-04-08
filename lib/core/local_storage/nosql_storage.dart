@@ -1,4 +1,4 @@
-import 'package:flutter_ddd/utils/local_storage/storage_interface.dart';
+import 'package:flutter_ddd/core/local_storage/storage_interface.dart';
 import 'package:objectbox/objectbox.dart';
 
 class ObjectBoxStorage<T> implements IStorageService<T> {

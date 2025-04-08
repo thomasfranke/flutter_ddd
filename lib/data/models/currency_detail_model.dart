@@ -1,4 +1,4 @@
-import 'package:flutter_ddd/core/converters/string_converter.dart';
+import 'package:flutter_ddd/shared/converters/string_converter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'currency_detail_model.g.dart';

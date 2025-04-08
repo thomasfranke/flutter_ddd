@@ -3,11 +3,11 @@ import 'package:flutter_ddd/domain/usecases/currency_usecases.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-part 'currency_detail_store.g.dart';
+part 'currency_detail_controller.g.dart';
 
-class CurrencyStore = CurrencyStoreBase with _$CurrencyStore;
+class CurrencyController = CurrencyControllerBase with _$CurrencyController;
 
-abstract class CurrencyStoreBase with Store {
+abstract class CurrencyControllerBase with Store {
   CurrencyUseCases currencyUseCases = Modular.get<CurrencyUseCases>();
 
   @observable

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
 import 'package:flutter_ddd/presentation/home/widgets/currency_summary_widget.dart';
 import 'package:flutter_ddd/presentation/home/widgets/search_widget.dart';
-import 'package:flutter_ddd/presentation/home/home_store.dart';
+import 'package:flutter_ddd/presentation/home/home_controller.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_result_list.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -15,11 +15,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  HomeStore homeStore = Modular.get<HomeStore>();
+  HomeController homeController = Modular.get<HomeController>();
 
   @override
   void initState() {
-    homeStore.getCurrencies();
+    homeController.getCurrencies();
     super.initState();
   }
 
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder:
             (_) => FetchResultList(
               head: SearchWidget(),
-              fetchStore: homeStore.currencySummaryList,
+              fetchStore: homeController.currencySummaryList,
               itemBuilder: (CurrencySummaryEntity currency) => CurrencySummaryWidget(currency: currency),
             ),
       ),

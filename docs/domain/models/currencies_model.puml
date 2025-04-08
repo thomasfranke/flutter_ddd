@@ -1,4 +1,4 @@
-@startuml CorrenciesModel
+@startuml CurrenciesModel
 class CurrenciesModel {
   + String symbol
   + String price

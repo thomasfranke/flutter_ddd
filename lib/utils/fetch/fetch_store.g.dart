@@ -13,16 +13,12 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
 
   @override
   dynamic get hasError =>
-      (_$hasErrorComputed ??= Computed<dynamic>(
-            () => super.hasError,
-            name: 'FetchStoreBase.hasError',
-          ))
+      (_$hasErrorComputed ??= Computed<dynamic>(() => super.hasError,
+              name: 'FetchStoreBase.hasError'))
           .value;
 
-  late final _$isFetchingAtom = Atom(
-    name: 'FetchStoreBase.isFetching',
-    context: context,
-  );
+  late final _$isFetchingAtom =
+      Atom(name: 'FetchStoreBase.isFetching', context: context);
 
   @override
   bool get isFetching {
@@ -37,10 +33,8 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
     });
   }
 
-  late final _$fetchedAtom = Atom(
-    name: 'FetchStoreBase.fetched',
-    context: context,
-  );
+  late final _$fetchedAtom =
+      Atom(name: 'FetchStoreBase.fetched', context: context);
 
   @override
   bool get fetched {
@@ -55,10 +49,8 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
     });
   }
 
-  late final _$successAtom = Atom(
-    name: 'FetchStoreBase.success',
-    context: context,
-  );
+  late final _$successAtom =
+      Atom(name: 'FetchStoreBase.success', context: context);
 
   @override
   bool get success {
@@ -73,10 +65,8 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
     });
   }
 
-  late final _$errorMessageAtom = Atom(
-    name: 'FetchStoreBase.errorMessage',
-    context: context,
-  );
+  late final _$errorMessageAtom =
+      Atom(name: 'FetchStoreBase.errorMessage', context: context);
 
   @override
   String get errorMessage {
@@ -106,26 +96,21 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
     });
   }
 
-  late final _$fetchAsyncAction = AsyncAction(
-    'FetchStoreBase.fetch',
-    context: context,
-  );
+  late final _$fetchAsyncAction =
+      AsyncAction('FetchStoreBase.fetch', context: context);
 
   @override
   Future fetch(Future<dynamic> callback, {bool silent = false}) {
     return _$fetchAsyncAction.run(() => super.fetch(callback, silent: silent));
   }
 
-  late final _$FetchStoreBaseActionController = ActionController(
-    name: 'FetchStoreBase',
-    context: context,
-  );
+  late final _$FetchStoreBaseActionController =
+      ActionController(name: 'FetchStoreBase', context: context);
 
   @override
   dynamic setData(T value) {
     final _$actionInfo = _$FetchStoreBaseActionController.startAction(
-      name: 'FetchStoreBase.setData',
-    );
+        name: 'FetchStoreBase.setData');
     try {
       return super.setData(value);
     } finally {
@@ -136,8 +121,7 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
   @override
   dynamic refresh() {
     final _$actionInfo = _$FetchStoreBaseActionController.startAction(
-      name: 'FetchStoreBase.refresh',
-    );
+        name: 'FetchStoreBase.refresh');
     try {
       return super.refresh();
     } finally {
@@ -148,8 +132,7 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
   @override
   dynamic _onSuccess(dynamic value) {
     final _$actionInfo = _$FetchStoreBaseActionController.startAction(
-      name: 'FetchStoreBase._onSuccess',
-    );
+        name: 'FetchStoreBase._onSuccess');
     try {
       return super._onSuccess(value);
     } finally {
@@ -160,8 +143,7 @@ mixin _$FetchStore<T> on FetchStoreBase<T>, Store {
   @override
   dynamic _onError(dynamic error) {
     final _$actionInfo = _$FetchStoreBaseActionController.startAction(
-      name: 'FetchStoreBase._onError',
-    );
+        name: 'FetchStoreBase._onError');
     try {
       return super._onError(error);
     } finally {

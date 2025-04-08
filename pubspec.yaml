@@ -23,6 +23,7 @@ dependencies:
   mobx_codegen: ^2.7.0
   objectbox: ^4.1.0
   objectbox_flutter_libs: ^4.1.0
+  result_dart: ^1.1.1
   
 
 dev_dependencies:

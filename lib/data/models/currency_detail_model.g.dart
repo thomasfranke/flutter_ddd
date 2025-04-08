@@ -10,12 +10,10 @@ CurrencyDetailModel _$CurrencyDetailModelFromJson(Map<String, dynamic> json) =>
     CurrencyDetailModel(
       symbol: json['symbol'] as String,
       priceChange: const StringConverter().fromJson(json['priceChange']),
-      priceChangePercent: const StringConverter().fromJson(
-        json['priceChangePercent'],
-      ),
-      weightedAvgPrice: const StringConverter().fromJson(
-        json['weightedAvgPrice'],
-      ),
+      priceChangePercent:
+          const StringConverter().fromJson(json['priceChangePercent']),
+      weightedAvgPrice:
+          const StringConverter().fromJson(json['weightedAvgPrice']),
       prevClosePrice: const StringConverter().fromJson(json['prevClosePrice']),
       lastPrice: const StringConverter().fromJson(json['lastPrice']),
       lastQty: const StringConverter().fromJson(json['lastQty']),

@@ -50,3 +50,34 @@ To configure the Flutter version, run the following command in the terminal:
 
 ```sh
 make fvm
+```
+
+### Structure:
+
+- Basic:
+
+core/
+  ├── exceptions/
+  ├── http_client/
+  ├── l10n/
+  └── local_storage/
+Tudo que é infraestrutura essencial, usada globalmente e que não pertence a nenhuma feature específica.
+
+shared/
+  ├── constants/
+  ├── mappers/
+  ├── extensions/
+  ├── theme/
+  └── widgets/
+Tudo que é reutilizável entre features, mas ligado à interface ou estrutura do app, não à lógica de domínio.
+
+utils/
+  ├── fetch/
+  ├── result/
+  └── validators/
+Funções ou componentes auxiliares puros, com pouca ou nenhuma dependência do app (sem estado, sem dependências pesadas).
+
+- DDD
+data/
+domain/
+presentation/

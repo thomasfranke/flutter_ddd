@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ddd/presentation/home/home_store.dart';
+import 'package:flutter_ddd/presentation/home/home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -7,11 +7,11 @@ class SearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeStore homeStore = Modular.get<HomeStore>();
+    HomeController homeController = Modular.get<HomeController>();
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
-        onChanged: (filter) => homeStore.getCurrencies(filter: filter),
+        onChanged: (filter) => homeController.getCurrencies(filter: filter),
         decoration: const InputDecoration(labelText: "Search", border: OutlineInputBorder()),
       ),
     );
