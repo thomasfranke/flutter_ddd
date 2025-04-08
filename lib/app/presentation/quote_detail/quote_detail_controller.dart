@@ -13,7 +13,7 @@ abstract class QuoteControllerBase with Store {
   @observable
   FetchStore<QuoteDetailEntity> quoteDetail = FetchStore(QuoteDetailEntity(symbol: ''));
 
-  getQuote({required String quoteSymbol}) async {
-    return await quoteDetail.fetch(quoteUseCases.loadQuote(quoteSymbol: quoteSymbol));
+  getQuote({required String symbol}) async {
+    return await quoteDetail.fetch(quoteUseCases.loadQuote(symbol: symbol));
   }
 }

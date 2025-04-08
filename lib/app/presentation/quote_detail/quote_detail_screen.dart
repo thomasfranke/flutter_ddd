@@ -6,8 +6,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class QuoteScreen extends StatefulWidget {
-  final String quoteSymbol;
-  const QuoteScreen({super.key, required this.quoteSymbol});
+  final String symbol;
+  const QuoteScreen({super.key, required this.symbol});
 
   @override
   State<QuoteScreen> createState() => _QuoteScreenState();
@@ -18,14 +18,14 @@ class _QuoteScreenState extends State<QuoteScreen> {
 
   @override
   void initState() {
-    quoteController.getQuote(quoteSymbol: widget.quoteSymbol);
+    quoteController.getQuote(symbol: widget.symbol);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.quoteSymbol)),
+      appBar: AppBar(title: Text(widget.symbol)),
       body: Observer(
         builder: (_) {
           return FetchResult(fetchStore: quoteController.quoteDetail, body: QuoteDetailWidget(quote: quoteController.quoteDetail.data!), errorChild: Text('error'));

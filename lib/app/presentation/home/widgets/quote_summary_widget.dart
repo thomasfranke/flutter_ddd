@@ -14,11 +14,11 @@ class QuoteSummaryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Bounceable(
-        onTap: () => Modular.to.pushNamed('/quote/', arguments: {'quoteSymbol': quote.quoteSymbol}),
+        onTap: () => Modular.to.pushNamed('/quote/', arguments: {'symbol': quote.symbol}),
         child: Card(
           child: ListTile(
             leading: Bounceable(onTap: () => log('Favorites coming soon.'), child: Icon(Icons.star_border)),
-            title: Text(quote.quoteSymbol),
+            title: Text(quote.symbol),
             subtitle: Text(quote.price),
             trailing: Icon(Icons.keyboard_arrow_right_outlined),
           ),

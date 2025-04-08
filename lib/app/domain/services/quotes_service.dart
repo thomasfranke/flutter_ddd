@@ -8,8 +8,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 class QuotesService {
   IQuoteRepository currencyRepository = Modular.get<IQuoteRepository>();
 
-  Future<QuoteDetailEntity> getCurrency({required String quoteSymbol}) async {
-    final model = await currencyRepository.fetchQuote(quoteSymbol: quoteSymbol);
+  Future<QuoteDetailEntity> getCurrency({required String symbol}) async {
+    final model = await currencyRepository.fetchQuote(symbol: symbol);
     return model.toEntity();
   }
 

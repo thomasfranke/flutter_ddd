@@ -8,6 +8,6 @@ part of 'quote_summary_entity.dart';
 
 QuoteSummaryEntity _$QuoteSummaryEntityFromJson(Map<String, dynamic> json) =>
     QuoteSummaryEntity(
-      quoteSymbol: json['quoteSymbol'] as String,
+      symbol: json['symbol'] as String,
       price: json['price'] as String,
     );

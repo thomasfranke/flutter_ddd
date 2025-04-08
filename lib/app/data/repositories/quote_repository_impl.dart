@@ -24,8 +24,8 @@ class QuoteRepositoryImpl implements IQuoteRepository {
   }
 
   @override
-  Future<QuoteDetailModel> fetchQuote({required String quoteSymbol}) async {
-    return await _api.request(ApiRoutes.quote(quoteSymbol: quoteSymbol)).then((data) {
+  Future<QuoteDetailModel> fetchQuote({required String symbol}) async {
+    return await _api.request(ApiRoutes.quote(symbol: symbol)).then((data) {
       if (data is Ok) {
         return QuoteDetailModel.fromJson(data.value);
       } else if (data is Error) {

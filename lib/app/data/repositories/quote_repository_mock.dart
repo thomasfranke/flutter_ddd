@@ -5,11 +5,11 @@ import 'package:flutter_ddd/app/domain/repositories/quote_repository.dart';
 class QuoteRepositoryMock implements IQuoteRepository {
   @override
   Future<List<QuoteSummaryModel>> fetchQuotes() async {
-    return [QuoteSummaryModel(quoteSymbol: "BTC", price: "10000"), QuoteSummaryModel(quoteSymbol: "ETH", price: "2000")];
+    return [QuoteSummaryModel(symbol: "BTC", price: "10000"), QuoteSummaryModel(symbol: "ETH", price: "2000")];
   }
 
   @override
-  Future<QuoteDetailModel> fetchQuote({required String quoteSymbol}) async {
+  Future<QuoteDetailModel> fetchQuote({required String symbol}) async {
     return QuoteDetailModel(
       symbol: "BTC",
       priceChange: "-1",

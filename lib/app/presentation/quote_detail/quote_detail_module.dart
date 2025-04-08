@@ -12,6 +12,6 @@ class CurrencyModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => QuoteScreen(quoteSymbol: r.args.data['quoteSymbol']));
+    r.child('/', child: (_) => QuoteScreen(symbol: r.args.data['symbol']));
   }
 }

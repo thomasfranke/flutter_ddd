@@ -8,6 +8,6 @@ part of 'quote_summary_model.dart';
 
 QuoteSummaryModel _$QuoteSummaryModelFromJson(Map<String, dynamic> json) =>
     QuoteSummaryModel(
-      quoteSymbol: json['quoteSymbol'] as String,
+      symbol: json['symbol'] as String,
       price: json['price'] as String,
     );
