@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_ddd/domain/entities/currency_detail_entity.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_detail_entity.dart';
 
 class CurrencyDetailWidget extends StatelessWidget {
   final CurrencyDetailEntity currency;

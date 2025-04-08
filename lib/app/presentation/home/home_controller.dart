@@ -1,5 +1,5 @@
-import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
-import 'package:flutter_ddd/domain/usecases/currency_usecases.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/app/domain/usecases/currency_usecases.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';

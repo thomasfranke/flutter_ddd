@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
-import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_summary_entity.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CurrencySummaryWidget extends StatelessWidget {

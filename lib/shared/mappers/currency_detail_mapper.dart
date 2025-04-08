@@ -1,5 +1,5 @@
-import 'package:flutter_ddd/data/models/currency_detail_model.dart';
-import 'package:flutter_ddd/domain/entities/currency_detail_entity.dart';
+import 'package:flutter_ddd/app/data/models/currency_detail_model.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_detail_entity.dart';
 
 extension CurrencyDetailMapper on CurrencyDetailModel {
   CurrencyDetailEntity toEntity() {

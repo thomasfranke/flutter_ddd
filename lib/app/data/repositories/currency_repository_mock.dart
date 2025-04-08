@@ -1,6 +1,6 @@
-import 'package:flutter_ddd/data/models/currency_summary_model.dart';
-import 'package:flutter_ddd/data/models/currency_detail_model.dart';
-import 'package:flutter_ddd/domain/repositories/currency_repository.dart';
+import 'package:flutter_ddd/app/data/models/currency_summary_model.dart';
+import 'package:flutter_ddd/app/data/models/currency_detail_model.dart';
+import 'package:flutter_ddd/app/domain/repositories/currency_repository.dart';
 
 class CurrencyRepositoryMock implements ICurrencyRepository {
   @override

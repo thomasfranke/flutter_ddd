@@ -1,12 +1,12 @@
 import 'package:flutter_ddd/core/http/http_client.dart';
-import 'package:flutter_ddd/data/repositories/currency_repository_impl.dart';
-import 'package:flutter_ddd/domain/repositories/currency_repository.dart';
-import 'package:flutter_ddd/domain/services/currencies_service.dart';
-import 'package:flutter_ddd/domain/usecases/currency_usecases.dart';
-import 'package:flutter_ddd/presentation/currency_detail/currency_detail_controller.dart';
-import 'package:flutter_ddd/presentation/currency_detail/currency_detail_module.dart';
-import 'package:flutter_ddd/presentation/home/home_controller.dart';
-import 'package:flutter_ddd/presentation/home/home_module.dart';
+import 'package:flutter_ddd/app/data/repositories/currency_repository_impl.dart';
+import 'package:flutter_ddd/app/domain/repositories/currency_repository.dart';
+import 'package:flutter_ddd/app/domain/services/currencies_service.dart';
+import 'package:flutter_ddd/app/domain/usecases/currency_usecases.dart';
+import 'package:flutter_ddd/app/presentation/currency_detail/currency_detail_controller.dart';
+import 'package:flutter_ddd/app/presentation/currency_detail/currency_detail_module.dart';
+import 'package:flutter_ddd/app/presentation/home/home_controller.dart';
+import 'package:flutter_ddd/app/presentation/home/home_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModule extends Module {

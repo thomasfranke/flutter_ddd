@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ddd/presentation/currency_detail/currency_detail_controller.dart';
-import 'package:flutter_ddd/presentation/currency_detail/widgets/currency_detail_widget.dart';
+import 'package:flutter_ddd/app/presentation/currency_detail/currency_detail_controller.dart';
+import 'package:flutter_ddd/app/presentation/currency_detail/widgets/currency_detail_widget.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_result.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

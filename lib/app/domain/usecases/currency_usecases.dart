@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:flutter_ddd/domain/entities/currency_detail_entity.dart';
-import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
-import 'package:flutter_ddd/domain/services/currencies_service.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_detail_entity.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/app/domain/services/currencies_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CurrencyUseCases {

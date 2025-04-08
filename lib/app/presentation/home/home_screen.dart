@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ddd/domain/entities/currency_summary_entity.dart';
-import 'package:flutter_ddd/presentation/home/widgets/currency_summary_widget.dart';
-import 'package:flutter_ddd/presentation/home/widgets/search_widget.dart';
-import 'package:flutter_ddd/presentation/home/home_controller.dart';
+import 'package:flutter_ddd/app/domain/entities/currency_summary_entity.dart';
+import 'package:flutter_ddd/app/presentation/home/widgets/currency_summary_widget.dart';
+import 'package:flutter_ddd/app/presentation/home/widgets/search_widget.dart';
+import 'package:flutter_ddd/app/presentation/home/home_controller.dart';
 import 'package:flutter_ddd/utils/fetch/fetch_result_list.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
