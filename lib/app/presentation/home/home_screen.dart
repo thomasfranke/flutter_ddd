@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/favorites_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/quotes_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/home_controller.dart';
+import 'package:flutter_ddd/core/l10n/gen/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final List<Widget> pages = [QuotesTab(), FavoritesTab()];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter Coins')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context).title)),
       drawer: Drawer(
         child: ListView(
           children: [
