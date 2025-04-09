@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/favorites_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/quotes_tab.dart';
@@ -32,9 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           children: [
             ListTile(
-              title: Text('Settings'),
+              title: Text('Feedback'),
               onTap: () {
-                Modular.to.pushNamed('/settings');
+                Modular.to.pushNamed('/feedback');
               },
             ),
           ],
@@ -46,12 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Quotes'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Favotires'),
         ],
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-            log('index = $index');
-          });
-        },
+        onTap: (index) => setState(() => currentIndex = index),
       ),
     );
   }

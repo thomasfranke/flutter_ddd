@@ -41,6 +41,15 @@ mixin _$HomeController on HomeControllerBase, Store {
     });
   }
 
+  late final _$updateFavoriteAsyncAction =
+      AsyncAction('HomeControllerBase.updateFavorite', context: context);
+
+  @override
+  Future updateFavorite({required String symbol}) {
+    return _$updateFavoriteAsyncAction
+        .run(() => super.updateFavorite(symbol: symbol));
+  }
+
   @override
   String toString() {
     return '''
