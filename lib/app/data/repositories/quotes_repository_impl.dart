@@ -14,7 +14,8 @@ class QuotesRepositoryImpl implements IQuotesRepository {
     return await _api.request(ApiRoutes.quotes()).then((data) {
       if (data is Ok) {
         List<Map<String, dynamic>> mapData = List<Map<String, dynamic>>.from(data.value);
-        return QuoteSummaryModel.fromList(mapData);
+
+        return QuoteSummaryModel.fromList(mapData).take(10).toList();
       } else if (data is Error) {
         throw Exception("Failed to fetch currencies: ${data.error}");
       } else {

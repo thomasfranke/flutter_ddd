@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_ddd/shared/mappers/quote_detail_mapper.dart';
 import 'package:flutter_ddd/shared/mappers/quote_summary_mapper.dart';
 import 'package:flutter_ddd/app/domain/entities/quote_detail_entity.dart';
@@ -16,9 +14,7 @@ class QuotesService {
   }
 
   Future<List<QuoteSummaryEntity>> getQuotes() async {
-    log('getQuotes');
     return (await quoteRepository.fetchQuotes()) //
-        .take(10)
         .map((model) => model.toEntity())
         .toList();
   }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_ddd/app/domain/repositories/favorites_repository.dart';
 import 'package:flutter_ddd/core/local_storage/local_storage_impl.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -10,19 +8,16 @@ class FavoritesRepositoryImpl implements IFavoritesRepository {
   @override
   Future<List<String>> fetchFavorites() async {
     dynamic list = await localStorageService.get(key: 'favorites');
-    log('lista: $list');
     return (list as List?)?.map((e) => e.toString()).toList() ?? [];
   }
 
   @override
   Future<void> addToFavorites({required String symbol}) async {
-    log('adicionando: $symbol');
     localStorageService.addToArray(key: 'favorites', value: symbol);
   }
 
   @override
   Future<void> removeFromFavorites({required String symbol}) async {
-    log('removendo: $symbol');
     localStorageService.removeFromArray(key: 'favorites', value: symbol);
   }
 
