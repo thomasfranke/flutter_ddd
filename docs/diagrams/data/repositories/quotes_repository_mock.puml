@@ -1,0 +1,61 @@
+@startuml QuotesRepositoryMock
+
+' Interfaces
+interface IQuotesRepository {
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+' Implementações
+class QuotesRepositoryImpl {
+  - _api: HttpClient
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+class QuotesRepositoryMock {
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+' Dependências
+class HttpClient {
+  + request(String url): Future<Result>
+}
+
+class QuoteSummaryModel {
+  + symbol: String
+  + price: String
+}
+
+class QuoteDetailModel {
+  + symbol: String
+  + ...
+}
+
+class ApiRoutes {
+  + quotes(): String
+  + quote(symbol: String): String
+}
+
+abstract class Result
+class Ok {
+  + value: dynamic
+}
+class Error {
+  + error: dynamic
+}
+
+' Heranças
+QuotesRepositoryImpl ..|> IQuotesRepository
+QuotesRepositoryMock ..|> IQuotesRepository
+Ok --|> Result
+Error --|> Result
+
+' Associações
+QuotesRepositoryImpl --> HttpClient
+QuotesRepositoryImpl --> ApiRoutes
+QuotesRepositoryImpl --> QuoteSummaryModel
+QuotesRepositoryImpl --> QuoteDetailModel
+
+@enduml

@@ -1,0 +1,53 @@
+@startuml QuotesRepositoryImpl
+
+' Interfaces
+interface IQuotesRepository {
+  + fetchQuotes(): Future<List<QuoteSßummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+' Classes
+class QuotesRepositoryImpl {
+  - _api: HttpClient
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+class HttpClient {
+  + request(String url): Future<Result>
+}
+
+class QuoteSummaryModel {
+  + symbol: String
+  + price: String
+  + fromList(list: List<Map<String, dynamic>>): List<QuoteSummaryModel>
+}
+
+class QuoteDetailModel {
+  + fromJson(Map<String, dynamic>): QuoteDetailModel
+}
+
+class ApiRoutes {
+  + quotes(): String
+  + quote(symbol: String): String
+}
+
+abstract class Result
+class Ok {
+  + value: dynamic
+}
+class Error {
+  + error: dynamic
+}
+
+' Relações
+QuotesRepositoryImpl ..|> IQuotesRepository
+QuotesRepositoryImpl --> HttpClient
+QuotesRepositoryImpl --> ApiRoutes
+QuotesRepositoryImpl --> QuoteSummaryModel
+QuotesRepositoryImpl --> QuoteDetailModel
+HttpClient --> Result
+Ok --|> Result
+Error --|> Result
+
+@enduml

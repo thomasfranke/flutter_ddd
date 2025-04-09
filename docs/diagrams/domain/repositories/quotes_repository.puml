@@ -1,0 +1,46 @@
+@startuml QuotesRepository
+
+' === MODELS ===
+class QuoteSummaryModel {
+  - symbol: String
+  - price: String
+  + fromJson(map: Map): QuoteSummaryModel
+  + fromList(list: List<Map>): List<QuoteSummaryModel>
+}
+
+class QuoteDetailModel {
+  - symbol: String
+  - priceChange: String
+  - priceChangePercent: String
+  - weightedAvgPrice: String
+  - prevClosePrice: String
+  - lastPrice: String
+  - lastQty: String
+  - bidPrice: String
+  - bidQty: String
+  - askPrice: String
+  - askQty: String
+  - openPrice: String
+  - highPrice: String
+  - lowPrice: String
+  - volume: String
+  - quoteVolume: String
+  - openTime: String
+  - closeTime: String
+  - firstId: String
+  - lastId: String
+  - count: String
+  + fromJson(map: Map): QuoteDetailModel
+}
+
+' === INTERFACE ===
+interface IQuotesRepository {
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+' === RELACIONAMENTOS ===
+IQuotesRepository --> QuoteSummaryModel
+IQuotesRepository --> QuoteDetailModel
+
+@enduml

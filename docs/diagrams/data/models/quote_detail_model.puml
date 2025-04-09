@@ -1,0 +1,31 @@
+@startuml QuoteDetailModel
+
+class QuoteDetailModel {
+  - symbol: String
+  - priceChange: String <<@StringConverter>>
+  - priceChangePercent: String <<@StringConverter>>
+  - weightedAvgPrice: String <<@StringConverter>>
+  - prevClosePrice: String <<@StringConverter>>
+  - lastPrice: String <<@StringConverter>>
+  - lastQty: String <<@StringConverter>>
+  - bidPrice: String <<@StringConverter>>
+  - bidQty: String <<@StringConverter>>
+  - askPrice: String <<@StringConverter>>
+  - askQty: String <<@StringConverter>>
+  - openPrice: String <<@StringConverter>>
+  - highPrice: String <<@StringConverter>>
+  - lowPrice: String <<@StringConverter>>
+  - volume: String <<@StringConverter>>
+  - quoteVolume: String <<@StringConverter>>
+  - openTime: String <<@StringConverter>>
+  - closeTime: String <<@StringConverter>>
+  - firstId: String <<@StringConverter>>
+  - lastId: String <<@StringConverter>>
+  - count: String <<@StringConverter>>
+
+  + QuoteDetailModel(...)
+  + fromJson(Map<String, dynamic>): QuoteDetailModel
+  + fromList(List<Map<String, dynamic>>): List<QuoteDetailModel>
+}
+
+@enduml

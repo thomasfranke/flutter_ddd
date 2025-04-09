@@ -1,0 +1,12 @@
+@startuml QuoteSummaryModel
+
+class QuoteSummaryModel {
+  - symbol: String
+  - price: String
+
+  + QuoteSummaryModel(symbol: String, price: String)
+  + fromJson(map: Map<String, dynamic>): QuoteSummaryModel
+  + fromList(list: List<Map<String, dynamic>>): List<QuoteSummaryModel>
+}
+
+@enduml

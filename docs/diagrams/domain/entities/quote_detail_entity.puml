@@ -1,0 +1,31 @@
+@startuml QuoteDetailEntity
+
+class QuoteDetailEntity {
+  - symbol: String
+  - priceChange: String
+  - priceChangePercent: String
+  - weightedAvgPrice: String
+  - prevClosePrice: String
+  - lastPrice: String
+  - lastQty: String
+  - bidPrice: String
+  - bidQty: String
+  - askPrice: String
+  - askQty: String
+  - openPrice: String
+  - highPrice: String
+  - lowPrice: String
+  - volume: String
+  - quoteVolume: String
+  - openTime: String
+  - closeTime: String
+  - firstId: String
+  - lastId: String
+  - count: String
+
+  + QuoteDetailEntity()
+  + fromJson(Map<String, dynamic>): QuoteDetailEntity
+  + fromList(List<Map<String, dynamic>>): List<QuoteDetailEntity>
+}
+
+@enduml

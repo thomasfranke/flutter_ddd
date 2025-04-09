@@ -1,0 +1,12 @@
+@startuml QuoteSummaryEntity
+
+class QuoteSummaryEntity {
+  - symbol: String
+  - price: String
+
+  + QuoteSummaryEntity(symbol: String, price: String)
+  + fromJson(Map<String, dynamic>): QuoteSummaryEntity
+  + fromList(List<Map<String, dynamic>>): List<QuoteSummaryEntity>
+}
+
+@enduml

@@ -1,0 +1,84 @@
+@startuml FavoritesRepository
+
+' Interfaces
+interface IQuotesRepository {
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+interface IFavoritesRepository {
+  + fetchFavorites(): Future<List<String>>
+  + addToFavorites(symbol: String): Future<void>
+  + removeFromFavorites(symbol: String): Future<void>
+  + isFavorite(symbol: String): Future<bool>
+}
+
+' Implementações
+class QuotesRepositoryImpl {
+  - _api: HttpClient
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+class QuotesRepositoryMock {
+  + fetchQuotes(): Future<List<QuoteSummaryModel>>
+  + fetchQuote(symbol: String): Future<QuoteDetailModel>
+}
+
+class FavoritesRepositoryImpl {
+  - localStorageService: LocalStorageImpl
+  + fetchFavorites(): Future<List<String>>
+  + addToFavorites(symbol: String): Future<void>
+  + removeFromFavorites(symbol: String): Future<void>
+  + isFavorite(symbol: String): Future<bool>
+}
+
+' Dependências
+class HttpClient {
+  + request(String url): Future<Result>
+}
+
+class LocalStorageImpl {
+  + get(key: String): Future<dynamic>
+  + addToArray(key: String, value: dynamic): Future<void>
+  + removeFromArray(key: String, value: dynamic): Future<void>
+}
+
+class QuoteSummaryModel {
+  + symbol: String
+  + price: String
+}
+
+class QuoteDetailModel {
+  + symbol: String
+  + ...
+}
+
+class ApiRoutes {
+  + quotes(): String
+  + quote(symbol: String): String
+}
+
+abstract class Result
+class Ok {
+  + value: dynamic
+}
+class Error {
+  + error: dynamic
+}
+
+' Heranças
+QuotesRepositoryImpl ..|> IQuotesRepository
+QuotesRepositoryMock ..|> IQuotesRepository
+FavoritesRepositoryImpl ..|> IFavoritesRepository
+Ok --|> Result
+Error --|> Result
+
+' Associações
+QuotesRepositoryImpl --> HttpClient
+QuotesRepositoryImpl --> ApiRoutes
+QuotesRepositoryImpl --> QuoteSummaryModel
+QuotesRepositoryImpl --> QuoteDetailModel
+FavoritesRepositoryImpl --> LocalStorageImpl
+
+@enduml

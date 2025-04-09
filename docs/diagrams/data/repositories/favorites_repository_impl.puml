@@ -1,0 +1,30 @@
+@startuml FavoritesRepositoryImpl
+
+' Interfaces
+interface IFavoritesRepository {
+  + fetchFavorites(): Future<List<String>>
+  + addToFavorites(symbol: String): Future<void>
+  + removeFromFavorites(symbol: String): Future<void>
+  + isFavorite(symbol: String): Future<bool>
+}
+
+' Classes
+class FavoritesRepositoryImpl {
+  - localStorageService: LocalStorageImpl
+  + fetchFavorites(): Future<List<String>>
+  + addToFavorites(symbol: String): Future<void>
+  + removeFromFavorites(symbol: String): Future<void>
+  + isFavorite(symbol: String): Future<bool>
+}
+
+class LocalStorageImpl {
+  + get(key: String): Future<dynamic>
+  + addToArray(key: String, value: dynamic): Future<void>
+  + removeFromArray(key: String, value: dynamic): Future<void>
+}
+
+' Relações
+FavoritesRepositoryImpl ..|> IFavoritesRepository
+FavoritesRepositoryImpl --> LocalStorageImpl : uses
+
+@enduml
