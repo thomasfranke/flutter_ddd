@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ddd/app_controller.dart';
 import 'package:flutter_ddd/core/l10n/gen/app_localizations.dart';
+import 'package:flutter_ddd/shared/theme/dark_mode.dart';
+import 'package:flutter_ddd/shared/theme/light_mode.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
@@ -8,18 +12,24 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter DDD', //
-      supportedLocales: const [Locale('en')],
-      locale: const Locale('en'),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      theme: ThemeData(primarySwatch: Colors.blue),
-      routerConfig: Modular.routerConfig,
+    AppController appController = Modular.get();
+
+    return Observer(
+      builder: (context) {
+        return MaterialApp.router(
+          title: 'Flutter DDD', //
+          supportedLocales: const [Locale('en')],
+          locale: const Locale('en'),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          theme: appController.isDarkMode ? darkTheme : lightTheme,
+          routerConfig: Modular.routerConfig,
+        );
+      },
     );
   }
 }

@@ -50,6 +50,20 @@ mixin _$HomeController on HomeControllerBase, Store {
         .run(() => super.updateFavorite(symbol: symbol));
   }
 
+  late final _$HomeControllerBaseActionController =
+      ActionController(name: 'HomeControllerBase', context: context);
+
+  @override
+  bool isFavorite({required String symbol}) {
+    final _$actionInfo = _$HomeControllerBaseActionController.startAction(
+        name: 'HomeControllerBase.isFavorite');
+    try {
+      return super.isFavorite(symbol: symbol);
+    } finally {
+      _$HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

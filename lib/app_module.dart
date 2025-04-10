@@ -4,6 +4,7 @@ import 'package:flutter_ddd/app/domain/services/favorites_service.dart';
 import 'package:flutter_ddd/app/domain/usecases/favorites_usecases.dart';
 import 'package:flutter_ddd/app/presentation/feedback/feedback_controller.dart';
 import 'package:flutter_ddd/app/presentation/feedback/feedback_module.dart';
+import 'package:flutter_ddd/app_controller.dart';
 import 'package:flutter_ddd/core/http/http_client.dart';
 import 'package:flutter_ddd/app/data/repositories/quotes_repository_impl.dart';
 import 'package:flutter_ddd/app/domain/repositories/quotes_repository.dart';
@@ -22,6 +23,7 @@ class AppModule extends Module {
   void binds(i) {
     /// Data
     /// Controllers
+    i.addSingleton(AppController.new);
     i.addSingleton(FeedbackController.new);
     i.addSingleton(HomeController.new);
     i.addSingleton(QuoteController.new);

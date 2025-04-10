@@ -22,13 +22,10 @@ class QuoteSummaryWidget extends StatelessWidget {
             child: Card(
               child: ListTile(
                 leading: Bounceable(
-                  onTap: () {
-                    homeController.updateFavorite(symbol: quote.symbol);
-                  },
+                  onTap: () => homeController.updateFavorite(symbol: quote.symbol),
                   child:
-                      homeController.favoritesList.data!.any((fav) => fav.symbol == quote.symbol)
-                          ? Icon(Icons.star)
-                          : Icon(Icons.star_border),
+                      /// TODO: mover para controller
+                      homeController.favoritesList.data!.any((fav) => fav.symbol == quote.symbol)? Icon(Icons.star) : Icon(Icons.star_border),
                 ),
                 title: Text(quote.symbol),
                 subtitle: Text(quote.price),

@@ -3,4 +3,7 @@ part 'app_controller.g.dart';
 
 class AppController = AppControllerBase with _$AppController;
 
-abstract class AppControllerBase with Store {}
+abstract class AppControllerBase with Store {
+  @observable
+  bool isDarkMode = false;
+}

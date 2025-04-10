@@ -27,6 +27,14 @@ abstract class HomeControllerBase with Store {
   }
 
   @action
+  bool isFavorite({required String symbol}) {
+    if (favoritesList.data != null) {
+      return favoritesList.data!.any((fav) => fav.symbol == symbol);
+    }
+    return false;
+  }
+
+  @action
   updateFavorite({required String symbol}) async {
     favoritesUseCases.updateFavorite(symbol: symbol);
     return await favoritesList.fetch(favoritesUseCases.fetchFavorites());
