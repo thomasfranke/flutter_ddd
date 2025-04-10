@@ -1,36 +1,29 @@
-import 'package:flutter_ddd/app/data/models/quote_summary_model.dart';
-import 'package:flutter_ddd/app/domain/entities/quote_summary_entity.dart';
 import 'package:flutter_ddd/app/domain/repositories/favorites_repository.dart';
 import 'package:flutter_ddd/app/domain/repositories/quotes_repository.dart';
-import 'package:flutter_ddd/shared/mappers/quote_summary_mapper.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class FavoritesService {
-  final IFavoritesRepository _favoritesRepository = Modular.get<IFavoritesRepository>();
+  final IFavoritesRepository favoritesRepository = Modular.get<IFavoritesRepository>();
   final IQuotesRepository quotesRepository = Modular.get<IQuotesRepository>();
 
-  Future<void> addFavorite({required String symbol}) async {
-    _favoritesRepository.addToFavorites(symbol: symbol);
+  Future<List<String>> updateFavorite({required String symbol}) async {
+    List<String> favorites = await getFavorites();
+    favorites.any((String favoriteSymbol) => favoriteSymbol == symbol)
+        ? await _removeFavorite(symbol: symbol)
+        : await _addFavorite(symbol: symbol);
+
+    return await getFavorites();
   }
 
-  Future<void> removeFavorite({required String symbol}) async {
-    _favoritesRepository.removeFromFavorites(symbol: symbol);
+  Future<void> _addFavorite({required String symbol}) async {
+    favoritesRepository.addToFavorites(symbol: symbol);
   }
 
-  Future<bool> isFavorite({required String symbol}) async {
-    return _favoritesRepository.isFavorite(symbol: symbol);
+  Future<void> _removeFavorite({required String symbol}) async {
+    favoritesRepository.removeFromFavorites(symbol: symbol);
   }
 
-  Future<List<QuoteSummaryEntity>> getFavorites() async {
-    List<QuoteSummaryModel> models = await quotesRepository.fetchQuotes();
-
-    models = await Future.wait(
-      models.map((element) async {
-        final isFavorite = await _favoritesRepository.isFavorite(symbol: element.symbol);
-        return isFavorite ? element : null;
-      }),
-    ).then((filteredList) => filteredList.whereType<QuoteSummaryModel>().toList());
-
-    return models.map((model) => model.toEntity()).toList();
+  Future<List<String>> getFavorites() async {
+    return await favoritesRepository.fetchFavorites();
   }
 }

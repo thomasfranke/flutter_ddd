@@ -13,28 +13,26 @@ class QuoteSummaryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeController homeController = Modular.get<HomeController>();
 
-    return Observer(
-      builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: Bounceable(
-            onTap: () => Modular.to.pushNamed('/quote/', arguments: {'symbol': quote.symbol}),
-            child: Card(
-              child: ListTile(
-                leading: Bounceable(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Bounceable(
+        onTap: () => Modular.to.pushNamed('/quote/', arguments: {'symbol': quote.symbol}),
+        child: Card(
+          child: ListTile(
+            leading: Observer(
+              builder: (context) {
+                return Bounceable(
                   onTap: () => homeController.updateFavorite(symbol: quote.symbol),
-                  child:
-                      /// TODO: mover para controller
-                      homeController.favoritesList.data!.any((fav) => fav.symbol == quote.symbol)? Icon(Icons.star) : Icon(Icons.star_border),
-                ),
-                title: Text(quote.symbol),
-                subtitle: Text(quote.price),
-                trailing: Icon(Icons.keyboard_arrow_right_outlined),
-              ),
+                  child: homeController.isFavorite(quote.symbol) ? Icon(Icons.star) : Icon(Icons.star_border),
+                );
+              },
             ),
+            title: Text(quote.symbol),
+            subtitle: Text(quote.price),
+            trailing: Icon(Icons.keyboard_arrow_right_outlined),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

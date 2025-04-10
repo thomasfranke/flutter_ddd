@@ -15,6 +15,7 @@ class QuotesUseCases {
     if (filter.isNotEmpty) {
       return allCurrencies.where((currency) => currency.symbol.toLowerCase().contains(filter.toLowerCase())).toList();
     }
+
     return allCurrencies.toList();
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/favorites_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/quotes_tab.dart';
@@ -23,13 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
+    homeController.getFavorites();
+    homeController.getCurrencies();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> pages = [QuotesTab(), FavoritesTab()];
-
     return Scaffold(
       appBar: AppBar(title: Text(AppLocalizations.of(context).title)),
       drawer: Drawer(
@@ -52,25 +50,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Expanded(child: Text("Dark Mode")),
                   Observer(
-                    builder: (context) {
-                      return Switch(value: appController.isDarkMode, onChanged: (bool value) => appController.toggleDarkMode());
-                    },
+                    builder:
+                        (context) => Switch(
+                          value: appController.isDarkMode, //
+                          onChanged: (bool value) => appController.toggleDarkMode(),
+                        ),
                   ),
                 ],
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.language),
-              title: Text('Language'),
-              onTap: () {
-                appController.toggleLocale();
-                log("language changed to ${appController.locale.languageCode}");
-              },
-            ),
+            ListTile(leading: Icon(Icons.language), title: Text('Language'), onTap: () => appController.toggleLocale()),
           ],
         ),
       ),
-      body: IndexedStack(index: currentIndex, children: pages),
+      body: IndexedStack(
+        index: currentIndex, //
+        children: [QuotesTab(), FavoritesTab()],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Quotes'),

@@ -16,7 +16,13 @@ abstract class HomeControllerBase with Store {
   FetchStore<List<QuoteSummaryEntity>> quotesList = FetchStore([]);
 
   @observable
-  FetchStore<List<QuoteSummaryEntity>> favoritesList = FetchStore([]);
+  FetchStore<List<String>> favoritesList = FetchStore([]);
+
+  @computed
+  List<String> get favoritesSymbols => favoritesList.data ?? [];
+
+  @computed
+  List<QuoteSummaryEntity> get favoriteQuotes => quotesList.data!.where((quote) => isFavorite(quote.symbol)).toList();
 
   getCurrencies({String filter = ""}) async {
     return await quotesList.fetch(quoteUseCases.loadQuotes(filter: filter));
@@ -26,17 +32,10 @@ abstract class HomeControllerBase with Store {
     return await favoritesList.fetch(favoritesUseCases.fetchFavorites());
   }
 
-  @action
-  bool isFavorite({required String symbol}) {
-    if (favoritesList.data != null) {
-      return favoritesList.data!.any((fav) => fav.symbol == symbol);
-    }
-    return false;
-  }
+  bool isFavorite(String symbol) => favoritesSymbols.contains(symbol);
 
   @action
   updateFavorite({required String symbol}) async {
-    favoritesUseCases.updateFavorite(symbol: symbol);
-    return await favoritesList.fetch(favoritesUseCases.fetchFavorites());
+    await favoritesList.fetch(favoritesUseCases.updateFavorite(symbol: symbol));
   }
 }
