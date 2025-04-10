@@ -5,7 +5,7 @@
 clean:
 	flutter clean
 	flutter pub get
-localizations:
+l10n:
 	flutter gen-l10n
 runtest:
 	flutter pub get

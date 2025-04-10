@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/favorites_tab.dart';
 import 'package:flutter_ddd/app/presentation/home/tabs/quotes_tab.dart';
@@ -36,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             DrawerHeader(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text(AppLocalizations.of(context).title, style: TextStyle(fontSize: 24))],
+                children: [Observer(builder: (ctx) => Text(AppLocalizations.of(ctx).title, style: TextStyle(fontSize: 24)))],
               ),
             ),
             ListTile(
@@ -51,16 +53,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   Expanded(child: Text("Dark Mode")),
                   Observer(
                     builder: (context) {
-                      return Switch(
-                        value: appController.isDarkMode,
-                        onChanged: (bool value) {
-                          appController.isDarkMode = !appController.isDarkMode;
-                        },
-                      );
+                      return Switch(value: appController.isDarkMode, onChanged: (bool value) => appController.toggleDarkMode());
                     },
                   ),
                 ],
               ),
+            ),
+            ListTile(
+              leading: Icon(Icons.language),
+              title: Text('Language'),
+              onTap: () {
+                appController.toggleLocale();
+                log("language changed to ${appController.locale.languageCode}");
+              },
             ),
           ],
         ),

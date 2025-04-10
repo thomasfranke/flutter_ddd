@@ -17,9 +17,10 @@ class AppWidget extends StatelessWidget {
     return Observer(
       builder: (context) {
         return MaterialApp.router(
-          title: 'Flutter DDD', //
-          supportedLocales: const [Locale('en')],
-          locale: const Locale('en'),
+          key: ValueKey(appController.locale.toString()),
+          title: 'Flutter DDD',
+          supportedLocales: const [Locale('en'), Locale('pt')],
+          locale: appController.locale,
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
