@@ -28,6 +28,9 @@ class AppWidget extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           theme: appController.isDarkMode ? darkTheme : lightTheme,
+          // theme: ThemeData.light(),
+          // darkTheme: ThemeData.dark(),
+          // themeMode: ThemeMode.system,
           routerConfig: Modular.routerConfig,
         );
       },
