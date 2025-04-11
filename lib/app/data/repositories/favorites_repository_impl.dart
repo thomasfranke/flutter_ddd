@@ -9,8 +9,9 @@ class FavoritesRepositoryImpl implements IFavoritesRepository {
 
   @override
   Future<List<String>> fetchFavorites() async {
-    List<dynamic> list = await localStorageService.get(key: 'favorites');
+    List<dynamic> list = await localStorageService.get(key: 'favorites') ?? [];
     log("Fetching favorites: $list");
+
     return list.map((e) => e.toString()).toList();
   }
 

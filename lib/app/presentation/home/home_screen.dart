@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             DrawerHeader(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Observer(builder: (ctx) => Text(AppLocalizations.of(ctx).title, style: TextStyle(fontSize: 24)))],
+                children: [Text(AppLocalizations.of(context).title, style: TextStyle(fontSize: 24))],
               ),
             ),
             ListTile(
