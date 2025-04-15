@@ -57,7 +57,6 @@ make fvm
 ---
 ### Structure:
 
-- DDD
 ```
   ├──data/
   |   ├── models/
@@ -68,11 +67,10 @@ make fvm
   |   ├── services/
   |   └── usecases/
   └──presentation/
-      └── models/
-            └── page/
-                ├── controller.dart
-                ├── module.dart/
-                └── screen.dart/
+      └── page1/
+          ├── controller.dart
+          ├── module.dart/
+          └── screen.dart/
 
 core/
   ├── exceptions/
