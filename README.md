@@ -92,8 +92,18 @@ utils/
 ```
 ---
 ### Aditional Documentation:
+```
 docs/
-
+  └── diagrams/
+        ├── data/
+        └── domain/
+```
 ---
 ### Testes:
+```
 tests/
+  ├── data/
+  ├── domain/
+  ├── presentation/
+  └── utils/
+```
