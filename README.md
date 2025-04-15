@@ -91,7 +91,7 @@ utils/
   └── validators/
 ```
 ---
-### Aditional Documentation:
+### Additional Documentation:
 ```
 docs/
   └── diagrams/
@@ -99,7 +99,7 @@ docs/
         └── domain/
 ```
 ---
-### Testes:
+### Automated Tests:
 ```
 tests/
   ├── data/
