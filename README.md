@@ -8,7 +8,7 @@ Currently, only the basic request to fetch all prices is working, however, we ca
 
 ---
 ### APK
-Android APK available on the root folder, in case you want to run to app and don't have Dart/Flutter installed.
+Android APK available on the root folder, in case you want to run the app and don't have Dart/Flutter installed.
 
 ---
 
@@ -69,8 +69,8 @@ make fvm
   └──presentation/
       └── page1/
           ├── controller.dart
-          ├── module.dart/
-          └── screen.dart/
+          ├── module.dart
+          └── screen.dart
 
 core/
   ├── exceptions/
@@ -95,8 +95,8 @@ utils/
 ```
 docs/
   └── diagrams/
-        ├── data/
-        └── domain/
+      ├── data/
+      └── domain/
 ```
 ---
 ### Automated Tests:
