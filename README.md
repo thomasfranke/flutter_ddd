@@ -26,8 +26,6 @@ The following features will be added in the coming days:
 
 - Tests: E2E, integration and unit
 - Local Storage using Objective Box
-- Favorites
-- Search
 - Multi-language support
 - Dark Mode
 - Various improvements to the app architecture
@@ -54,14 +52,27 @@ make fvm
 
 ### Structure:
 
-- Basic:
+- DDD
+  ├──data/
+  |   ├── models/
+  |   └── repositories/ 
+  ├──domain/
+  |   ├── entities/
+  |   ├── repositories/
+  |   ├── services/
+  |   └── usecases/
+  └──presentation/
+      └── models/
+            └── page/
+                ├── controller.dart
+                ├── module.dart/
+                └── screen.dart/
 
 core/
   ├── exceptions/
   ├── http_client/
   ├── l10n/
   └── local_storage/
-Tudo que é infraestrutura essencial, usada globalmente e que não pertence a nenhuma feature específica.
 
 shared/
   ├── constants/
@@ -69,15 +80,8 @@ shared/
   ├── extensions/
   ├── theme/
   └── widgets/
-Tudo que é reutilizável entre features, mas ligado à interface ou estrutura do app, não à lógica de domínio.
 
 utils/
   ├── fetch/
   ├── result/
   └── validators/
-Funções ou componentes auxiliares puros, com pouca ou nenhuma dependência do app (sem estado, sem dependências pesadas).
-
-- DDD
-data/
-domain/
-presentation/
