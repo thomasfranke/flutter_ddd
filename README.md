@@ -7,8 +7,18 @@ This project is under development and is meant to showcase good practices, DDD, 
 Currently, only the basic request to fetch all prices is working, however, we can already see the complete DDD pattern, with Data, Domain and UI layers.
 
 ---
+
 ### APK
 Android APK available on the root folder, in case you want to run the app and don't have Dart/Flutter installed.
+
+---
+
+### Development Status
+🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 90% Architecture  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% Binance API  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% Favorites - Offline, using Hive  
+🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 50% Automated Tests  
+🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 50% Documentation  
 
 ---
 
@@ -55,9 +65,11 @@ make fvm
 ```
 
 ---
-### Structure:
+
+### Structure
 
 ```
+app/
   ├──data/
   |   ├── models/
   |   └── repositories/ 
@@ -91,7 +103,7 @@ utils/
   └── validators/
 ```
 ---
-### Additional Documentation:
+### Additional Documentation
 ```
 docs/
   └── diagrams/
@@ -99,7 +111,7 @@ docs/
       └── domain/
 ```
 ---
-### Automated Tests:
+### Automated Tests
 ```
 tests/
   ├── data/

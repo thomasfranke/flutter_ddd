@@ -100,6 +100,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'CryptoQuotes'**
   String get title;
+
+  /// App Title
+  ///
+  /// In en, this message translates to:
+  /// **'CryptoQuotes'**
+  String get title2;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

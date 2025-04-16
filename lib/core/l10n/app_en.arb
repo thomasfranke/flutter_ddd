@@ -3,5 +3,9 @@
     "title": "CryptoQuotes",
     "@title": {
       "description": "App Title"
+    },
+    "title2": "CryptoQuotes",
+    "@title2": {
+      "description": "App Title"
     }
 }

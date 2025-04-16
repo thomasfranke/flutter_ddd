@@ -10,4 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get title => 'CryptoQuotes';
+
+  @override
+  String get title2 => 'CryptoQuotes';
 }

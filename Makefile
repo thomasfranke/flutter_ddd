@@ -29,7 +29,8 @@ prepare: fvm runner clean test
 ### Build Release -> AppBundle + IPA               ###
 ######################################################
 
-apk: fvm runner clean runtest apk_go
+apk: fvm runner clean runtest
+	$(BUILD_APK)
 appbundle: fvm runner clean runtest 
 ipa: fvm runner clean runtest 
 release: fvm appbundle ipa
@@ -42,7 +43,4 @@ release: fvm appbundle ipa
 BUILD_APK = flutter build apk --release
 BUILD_APP_BUNDLE = flutter build appbundle --release
 BUILD_IPA = flutter build ipa
-
-apk_go: fvm runner clean runtest
-	$(BUILD_APK)
 

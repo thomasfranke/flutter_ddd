@@ -10,4 +10,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get title => 'Cotações Cripto';
+
+  @override
+  String get title2 => 'Cotações Cripto';
 }
