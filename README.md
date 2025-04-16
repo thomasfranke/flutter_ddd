@@ -4,21 +4,25 @@ A fun project with a simple implementation of DDD using MobX and Modular, levera
 
 This project is under development and is meant to showcase good practices, DDD, Clean Architecture, Design Patterns, and more.
 
-Currently, only the basic request to fetch all prices is working, however, we can already see the complete DDD pattern, with Data, Domain and UI layers.
+Currently, only the basic request to fetch all prices is working. However, the complete DDD structure is already in place, including Data, Domain, and UI layers.
+
+UI: Developing a polished interface is not the priority. **The main goal is to implement and test programming best practices, with a strong focus on architecture.**
 
 ---
 
 ### APK
-Android APK available on the root folder, in case you want to run the app and don't have Dart/Flutter installed.
+An Android APK is available in the root folder in case you want to run the app without having Dart or Flutter installed.
+
+
 
 ---
 
 ### Development Status
-🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 90% Architecture  
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% Binance API  
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% Favorites - Offline, using Hive  
-🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 50% Automated Tests  
-🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 50% Documentation  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜  **90%** Architecture  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Binance API  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Favorites - Offline, using Hive  
+🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜  **50%** Automated Tests  
+🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜  **50%** Documentation  
 
 ---
 
