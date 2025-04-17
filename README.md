@@ -2,10 +2,6 @@
 
 A fun project with a simple implementation of DDD using MobX and Modular, leveraging the public Binance API to fetch currency prices.
 
-This project is under development and is meant to showcase good practices, DDD, Clean Architecture, Design Patterns, and more.
-
-Currently, only the basic request to fetch all prices is working. However, the complete DDD structure is already in place, including Data, Domain, and UI layers.
-
 UI: Developing a polished interface is not the priority. **The main goal is to implement and test programming best practices, with a strong focus on architecture.**
 
 ---
@@ -13,14 +9,13 @@ UI: Developing a polished interface is not the priority. **The main goal is to i
 ### APK
 An Android APK is available in the root folder in case you want to run the app without having Dart or Flutter installed.
 
-
-
 ---
 
 ### Development Status
-🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜  **90%** Architecture  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜  **90%** Architecture: DDD, and implementing: Modular, MobX, Hive, Result, Dio, Json Serializable  
 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Binance API  
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Favorites - Offline, using Hive  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Favorites: With local storage, using Hive  
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **100%** Features: Dark Mode, Multi Language  
 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜  **50%** Automated Tests  
 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜  **50%** Documentation  
 
@@ -38,16 +33,38 @@ Most importantly, it works. Really well. 🚀
 
 ---
 
-### Under Development
+### DDD
 
-The following features will be added in the coming days:
+This project applies **DDD concepts** to separate application layers:
 
-- Tests: E2E, integration and unit
-- Local Storage using Objective Box
-- Multi-language support
-- Dark Mode
-- Various improvements to the app architecture
-- Documentation with Class, Sequence, and Use Case Diagrams.
+- `domain/` contains core business logic: entities, services, and use cases  
+- `data/` handles external data sources (API, DB), using models and repositories  
+- `presentation/` contains UI and controllers  
+- `core/` and `shared/` include reusable and app-wide concerns (e.g., http, exceptions, constants)
+
+---
+
+### Packages
+
+**Architecture & State:**
+- `mobx`
+- `flutter_mobx`
+- `flutter_modular`
+
+**Networking & Storage:**
+- `dio`
+- `hive`
+
+**Code Generation:**
+- `build_runner`
+- `json_annotation`
+
+**Functional Programming:**
+- `result`
+
+**Testing:**
+- `mocktail`
+- `flutter_test`
 
 
 ---
@@ -70,7 +87,7 @@ make fvm
 
 ---
 
-### Structure
+### Folder Structure
 
 ```
 app/
@@ -123,3 +140,7 @@ tests/
   ├── presentation/
   └── utils/
 ```
+
+> Clean, decoupled architecture following DDD (Domain-Driven Design) and Clean Architecture principles.  
+> This setup promotes **separation of concerns**, **testability**, and **scalability**.
+
