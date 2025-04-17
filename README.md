@@ -1,4 +1,4 @@
-### Flutter DDD  
+## Flutter DDD  
 
 A fun project with a simple implementation of DDD using MobX and Modular, leveraging the public Binance API to fetch currency prices.
 
@@ -33,7 +33,7 @@ Most importantly, it works. Really well. 🚀
 
 ---
 
-### DDD
+### Domain-Driven Design (DDD)
 
 This project applies **DDD concepts** to separate application layers:
 
