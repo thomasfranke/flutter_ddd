@@ -5,7 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
+
 jobs:
   flutter:
     name: Build & Test Flutter App
@@ -24,7 +24,7 @@ jobs:
     - name: Instalar dependências
       run: flutter pub get
 
-    - name: 🧹 Analisar código (lint)
+    - name: Analisar código (lint)
       run: flutter analyze
 
     - name: Instalar lcov
