@@ -8,10 +8,11 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class QuotesRepositoryImpl implements IQuotesRepository {
   final HttpClient _api = Modular.get();
-
+// propesqmob
   @override
   Future<List<QuoteSummaryModel>> fetchQuotes() async {
     return await _api.request(ApiRoutes.quotes()).then((data) {
+      
       if (data is Ok) {
         List<Map<String, dynamic>> mapData = List<Map<String, dynamic>>.from(data.value);
         return QuoteSummaryModel.fromList(mapData).toList();

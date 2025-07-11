@@ -1,0 +1,40 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  flutter:
+    name: Build & Test Flutter App
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v4
+
+    - name: 🧩 Instalar Flutter 3.32.0
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.0'
+        cache: true
+
+    - name: 📦 Instalar dependências
+      run: flutter pub get
+
+    - name: 🧹 Analisar código (lint)
+      run: flutter analyze
+
+    - name: ✅ Rodar testes unitários
+      run: flutter test
+
+    - name: 🏗️ Build APK release
+      run: flutter build apk --release
+
+    - name: 📤 Upload do APK (artefato)
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release-apk
+        path: build/app/outputs/flutter-apk/app-release.apk

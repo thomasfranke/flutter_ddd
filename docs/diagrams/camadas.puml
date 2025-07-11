@@ -1,0 +1,33 @@
+@startuml
+!define RECTANGLE class
+
+package "Data Layer (Infra)" {
+  RECTANGLE Data {
+    +Models
+    +Repositories
+  }
+}
+
+package "Domain Layer" {
+  RECTANGLE Domain {
+    +Entities
+    +Repositories
+    +Services
+    +UseCases
+  }
+}
+package "Presentation Layer" {
+  RECTANGLE Presentation {
+    +Controller
+    +Module
+    +Screens
+  }
+}
+
+' Define interactions between layers
+Presentation -right-> Domain
+Presentation <-right- Domain
+Data -right-> Domain
+Data <-right- Domain
+
+@enduml
