@@ -5,35 +5,49 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+    
 jobs:
   flutter:
     name: Build & Test Flutter App
     runs-on: ubuntu-latest
 
     steps:
-    - name: 📥 Checkout do código
+    - name: Checkout do código
       uses: actions/checkout@v4
 
-    - name: 🧩 Instalar Flutter 3.29.2
+    - name: Instalar Flutter
       uses: subosito/flutter-action@v2
       with:
         flutter-version: '3.29.2'
         cache: true
 
-    - name: 📦 Instalar dependências
+    - name: Instalar dependências
       run: flutter pub get
 
     - name: 🧹 Analisar código (lint)
       run: flutter analyze
 
-    - name: ✅ Rodar testes unitários
-      run: flutter test
+    - name: Instalar lcov
+      run: sudo apt-get install lcov
 
-    - name: 🏗️ Build APK release
+    - name: Rodar testes com cobertura
+      run: flutter test --coverage
+
+    - name: Verificar cobertura >= 80%
+      run: |
+        COVERAGE=$(lcov --summary coverage/lcov.info | grep 'lines......:' | awk '{print $2}' | sed 's/%//')
+        echo "Cobertura de código: $COVERAGE%"
+        if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+          echo "❌ Cobertura abaixo de 80%!"
+          exit 1
+        else
+          echo "✅ Cobertura OK!"
+        fi
+
+    - name: Build APK release
       run: flutter build apk --release
 
-    - name: 📤 Upload do APK (artefato)
+    - name: Upload APK como artefato
       uses: actions/upload-artifact@v4
       with:
         name: app-release-apk
