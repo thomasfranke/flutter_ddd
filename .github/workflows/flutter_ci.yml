@@ -15,10 +15,10 @@ jobs:
     - name: 📥 Checkout do código
       uses: actions/checkout@v4
 
-    - name: 🧩 Instalar Flutter 3.32.0
+    - name: 🧩 Instalar Flutter 3.29.2
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.32.0'
+        flutter-version: '3.29.2'
         cache: true
 
     - name: 📦 Instalar dependências
